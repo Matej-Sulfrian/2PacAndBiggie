@@ -1,0 +1,8 @@
+html, body, canvas {
+    width: 80%;
+    height: 80%;
+}
+
+canvas {
+    background-color: darkgrey;
+}
