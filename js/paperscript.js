@@ -1,24 +1,15 @@
 var Ball = function(point, vector) {
-    if (!vector || vector.isZero()) {
-        this.vector = Point.random() * 5;
-    } else {
-        this.vector = vector * 2;
-    }
+    this.vector = vector;
     this.point = point;
-    this.dampen = 0.4;
-    this.gravity = 9;
-    this.bounce = -0.9;
-
+    this.gravity = 0.9;
+    this.bounce = -15;
     var color = {
         hue: Math.random() * 360,
         saturation: 1,
         brightness: 1
     };
     var gradient = new Gradient([color, 'black'], true);
-
-    var radius = this.radius = 50 /** Math.random()*/ + 30;
-    // Wrap CompoundPath in a Group, since CompoundPaths directly
-    // applies the transformations to the content, just like Path.
+    var radius = this.radius = 50;
     var ball = new CompoundPath({
         children: [
             new Path.Circle({
@@ -39,32 +30,92 @@ var Ball = function(point, vector) {
     });
 }
 
+var Plank = function(point) {
+    this.point = point;
+    this.vector = new Point(0, 0)
+    var color = {
+        hue: Math.random() * 360,
+        saturation: 1,
+        brightness: 1
+    };
+    var plank = new Rectangle(this.point, new Point(this.point.x + 150, this.point.y + 20))
+    var radius = new Size (20, 20)
+    var path = new Path.Rectangle(plank, radius)
+    path.fillColor = new Color(color)
+}
+
+var move = "";
+var left = 0;
+var right = 0;
+
+var planks = [];
+function createPlanks () {
+    for (var i = 0; i < 5; i++) {
+        var position = ((Point.random()) * [200, 880]),
+            plank = new Plank(position)
+        planks.push(plank);
+    }
+}
+createPlanks()
+for (var i = 0; i < planks.length; i++) {
+    console.log(planks[i])
+}
+
+
 Ball.prototype.iterate = function() {
     var size = view.size;
     this.vector.y += this.gravity;
-    this.vector.x *= 0.99;
     var pre = this.point + this.vector;
-    if (pre.x < this.radius || pre.x > size.width - this.radius)
-        this.vector.x *= -this.dampen;
-    if (pre.y < this.radius || pre.y > size.height - this.radius) {
-        // if (Math.abs(this.vector.x) < 3)
-        //     this.vector = Point.random() * [150, 100] + [-75, 20];
-        this.vector.y *= this.bounce;
-    }
 
+    console.log(pre.x)
+
+    if (pre.y < this.radius || pre.y > size.height - this.radius) {
+        this.vector.y = this.bounce;
+
+    } else {
+        for (var i = 0; i < planks.length; i++) {
+            if (pre.y < planks[i].point.y && pre.y > planks[i].point.y - 40 && pre.x > planks[i].point.x && pre.x < planks[i].point.x + 150) {
+                console.log(planks[i].point)
+                console.log(pre)
+                this.vector.y = this.bounce;
+                break
+            }
+        }
+    }
     var max = Point.max(this.radius, this.point + this.vector);
+
     this.item.position = this.point = Point.min(max, size - this.radius);
-    this.item.rotate(this.vector.x);
+    if (move !== "") {
+        if (move === "moveRight") {
+            this.vector.x += 10;
+            right += 10
+        } else if (move === "moveLeft") {
+            this.vector.x -= 10;
+            left += 10
+        } else if (move === "clearRight") {
+            this.vector.x -= right;
+            right = 0
+        } else if (move === "clearLeft") {
+            this.vector.x += left
+            left = 0
+        }
+        move = ""
+    }
 };
 
 
 var balls = [];
-for (var i = 0; i < 1; i++) {
-    var position = new Point(50, 50) * view.size,
-        vector = (/*Point.random() - */ [0.5, 0]) * [50, 100],
-        ball = new Ball(position, vector);
-    balls.push(ball);
+function createBalls () {
+    for (var i = 0; i < 1; i++) {
+        var position = new Point(50, 50) * view.size,
+            vector = new Point(0, 0),
+            ball = new Ball(position, vector);
+        balls.push(ball);
+    }
 }
+createBalls()
+
+
 
 var textItem = new PointText({
     point: [20, 30],
@@ -72,18 +123,25 @@ var textItem = new PointText({
     content: 'Click, drag and release to add balls.'
 });
 
-var lastDelta;
-function onMouseDrag(event) {
-    lastDelta = event.delta;
-}
-
-function onMouseUp(event) {
-    var ball = new Ball(event.point, lastDelta);
-    balls.push(ball);
-    lastDelta = null;
-}
 
 function onFrame() {
     for (var i = 0, l = balls.length; i < l; i++)
         balls[i].iterate();
+}
+
+tool.onKeyDown = function (eventObject) {
+    if (eventObject.key === 'a') {
+        move = "moveLeft"
+        console.log(move)
+    } else if (eventObject.key === 'd') {
+        move = "moveRight"
+    }
+}
+
+tool.onKeyUp = function (eventObject) {
+    if (eventObject.key === 'a') {
+        move = "clearLeft"
+    } else if (eventObject.key === 'd') {
+        move = "clearRight"
+    }
 }

@@ -1,6 +1,6 @@
 html, body, canvas {
-    width: 80%;
-    height: 80%;
+    width: 450px;
+    height: 900px;
 }
 
 canvas {
