@@ -117,11 +117,11 @@ createBalls()
 
 
 
-var textItem = new PointText({
-    point: [20, 30],
-    fillColor: 'black',
-    content: 'Click, drag and release to add balls.'
-});
+// var textItem = new PointText({
+//     point: [20, 30],
+//     fillColor: 'black',
+//     content: 'Click, drag and release to add balls.'
+// });
 
 
 function onFrame() {
