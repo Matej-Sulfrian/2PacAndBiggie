@@ -48,15 +48,31 @@ var move = "";
 var left = 0;
 var right = 0;
 
+function randomIntFromInterval(min, max) { // min and max included
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
 var planks = [];
 function createPlanks () {
+    var offset = 0;
     for (var i = 0; i < 5; i++) {
-        var position = ((Point.random()) * [200, 880]),
+        var y
+        if (i === 0) {
+            y = randomIntFromInterval(500, 700)
+        } else {
+            y = randomIntFromInterval(offset - 70, offset - 200)
+        }
+        offset = y
+        console.log(offset)
+        var x = randomIntFromInterval(0, 300)
+        var position = new Point(x , y),
             plank = new Plank(position)
         planks.push(plank);
+
     }
 }
 createPlanks()
+
 for (var i = 0; i < planks.length; i++) {
     console.log(planks[i])
 }
@@ -67,16 +83,12 @@ Ball.prototype.iterate = function() {
     this.vector.y += this.gravity;
     var pre = this.point + this.vector;
 
-    console.log(pre.x)
-
     if (pre.y < this.radius || pre.y > size.height - this.radius) {
         this.vector.y = this.bounce;
 
     } else {
         for (var i = 0; i < planks.length; i++) {
             if (pre.y < planks[i].point.y && pre.y > planks[i].point.y - 40 && pre.x > planks[i].point.x && pre.x < planks[i].point.x + 150) {
-                console.log(planks[i].point)
-                console.log(pre)
                 this.vector.y = this.bounce;
                 break
             }
@@ -114,8 +126,6 @@ function createBalls () {
     }
 }
 createBalls()
-
-
 
 // var textItem = new PointText({
 //     point: [20, 30],
