@@ -33,7 +33,7 @@ var Ball = function (point, vector) {
 var Plank = function (point) {
     this.point = point;
     this.vector = new Point(0, 0)
-    this.gravity = new Point(0, 0.2)
+    this.gravity = new Point(0, 2)
     var color = {
         hue: Math.random() * 360,
         saturation: 1,
@@ -50,9 +50,6 @@ var Plank = function (point) {
         fillColor: new Color(color)
     })
 
-    // var path = new Path.Rectangle(plank, radius)
-    // path.fillColor = new Color(color)
-
     this.item = new Group({
         children: [plank],
         applyMatrix: false,
@@ -64,13 +61,14 @@ var planks = [];
 
 Plank.prototype.move = function () {
     var size = view.size
-    this.vector += this.gravity
+    this.vector = this.gravity
 
     if (this.item.position.y >= 700) {
         console.log("out")
         this.item.remove()
         planks.shift()
         var newOffset = 700 - planks[planks.length - 1].point.y
+        console.log(newOffset)
         createPlanks(1, newOffset)
     }
 
@@ -83,9 +81,7 @@ var move = "";
 var left = 0;
 var right = 0;
 
-var movePlanks = false;
-
-function randomIntFromInterval(min, max) { // min and max included
+function randomIntFromInterval(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
@@ -94,12 +90,12 @@ function createPlanks(_amount, _offset) {
     for (var i = 0; i < _amount; i++) {
         var y
         if (i === 0 && !_offset) {
-            y = randomIntFromInterval(620, 700)
+            y = randomIntFromInterval(650, 700)
         } else {
             if (_offset) {
                 offset = _offset
             }
-            y = randomIntFromInterval(offset - 70, offset - 150)
+            y = randomIntFromInterval(offset - 70, offset - 140)
         }
         offset = y
         var x = randomIntFromInterval(0, 300)
@@ -127,12 +123,10 @@ Ball.prototype.iterate = function () {
         this.vector.y = this.bounce;
     } else {
         for (var i = 0; i < planks.length; i++) {
-            if (pre.y < planks[i].point.y && pre.y > planks[i].point.y - 40 && pre.x > planks[i].point.x && pre.x < planks[i].point.x + 150 && this.vector.y > 8) {
+            if (pre.y < planks[i].point.y && pre.y > planks[i].point.y - 40 && pre.x > planks[i].point.x - 150 && pre.x < planks[i].point.x + 150 && this.vector.y > 8) {
                 this.vector.y = this.bounce;
-                // movePlanks = true
-                for (var p = 0; p < planks.length; p++) {
-                    planks[p].move()
-                }
+                movePlanks = true
+                stopPlanksMoving()
                 break
             }
         }
@@ -188,6 +182,7 @@ function onFrame() {
             planks[p].move()
         }
     }
+
 
 }
 
