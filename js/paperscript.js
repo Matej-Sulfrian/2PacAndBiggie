@@ -12,7 +12,7 @@ var startPlankPoints = [
     {"x": view.size.width / 5, "y": view.size.height - 490},
     {"x": view.size.width / 2, "y": view.size.height - 620}
 ];
-var startJumps = 0;
+var startJumps = 1;
 
 var morePlankPoints = [
     {"x": view.size.width / 4, "y": 0},
@@ -34,7 +34,7 @@ var Ball = function (point, vector) {
         brightness: 1
     };
     var gradient = new Gradient([color, 'black'], true);
-    var radius = this.radius = 50;
+    var radius = this.radius = 30;
     var ball = new CompoundPath({
         children: [
             new Path.Circle({
@@ -68,7 +68,7 @@ var Plank = function (point) {
     var plank = new CompoundPath({
         children: [
             new Path.Rectangle({
-                rectangle: new Rectangle(this.point, new Point(this.point.x + 150, this.point.y + 20)),
+                rectangle: new Rectangle(this.point, new Point(this.point.x + 100, this.point.y + 20)),
                 radius: radius
             }),
         ],
@@ -137,7 +137,7 @@ Ball.prototype.iterate = function () {
         }
     } else {
         for (var i = 0; i < planks.length; i++) {
-            if (pre.y < planks[i].point.y && pre.y > planks[i].point.y - 40 && pre.x > planks[i].point.x - 150 && pre.x < planks[i].point.x + 150 && this.vector.y > 8) {
+            if (pre.y < planks[i].point.y && pre.y > planks[i].point.y - 40 && pre.x > planks[i].point.x - 100 && pre.x < planks[i].point.x + 100 && this.vector.y > 8) {
                 this.vector.y = this.bounce;
                 if (startJumps > 3) {
                     movePlanks = true
@@ -150,7 +150,7 @@ Ball.prototype.iterate = function () {
             }
         }
     }
-    if (pre.y < size.height / 2) {
+    if (pre.y < size.height / 3) {
         movePlanks = true
         stopPlanksMoving()
     }
