@@ -5,5 +5,5 @@ var movePlanks = false;
 function stopPlanksMoving() {
     setTimeout(() => {
         movePlanks = false
-    },1000)
+    },250)
 }

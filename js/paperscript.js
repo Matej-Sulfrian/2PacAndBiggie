@@ -1,3 +1,28 @@
+var move = "";
+var left = 0;
+var right = 0;
+
+var planks = [];
+var balls = [];
+
+var startPlankPoints = [
+    {"x": view.size.width / 4, "y": view.size.height - 80},
+    {"x": view.size.width / 3, "y": view.size.height - 210},
+    {"x": view.size.width / 1.5, "y": view.size.height - 360},
+    {"x": view.size.width / 5, "y": view.size.height - 490},
+    {"x": view.size.width / 2, "y": view.size.height - 620}
+];
+var startJumps = 0;
+
+var morePlankPoints = [
+    {"x": view.size.width / 4, "y": 0},
+    {"x": view.size.width / 3, "y": 0},
+    {"x": view.size.width / 5, "y": 0},
+    {"x": view.size.width / 2, "y": 0},
+    {"x": view.size.width / 1.5, "y": 0}
+];
+var mPPi = 0;
+
 var Ball = function (point, vector) {
     this.vector = vector;
     this.point = point;
@@ -33,7 +58,7 @@ var Ball = function (point, vector) {
 var Plank = function (point) {
     this.point = point;
     this.vector = new Point(0, 0)
-    this.gravity = new Point(0, 2)
+    this.gravity = new Point(0, 20)
     var color = {
         hue: Math.random() * 360,
         saturation: 1,
@@ -57,19 +82,24 @@ var Plank = function (point) {
     })
 }
 
-var planks = [];
-
 Plank.prototype.move = function () {
     var size = view.size
     this.vector = this.gravity
 
     if (this.item.position.y >= 700) {
-        console.log("out")
+        // console.log("out")
         this.item.remove()
         planks.shift()
-        var newOffset = 700 - planks[planks.length - 1].point.y
-        console.log(newOffset)
-        createPlanks(1, newOffset)
+        // var newOffset = 700 - planks[planks.length - 1].point.y
+        // console.log(newOffset)
+        var newPoint = new Point (morePlankPoints[mPPi].x, morePlankPoints[mPPi].y)
+            newPlank = new Plank(newPoint)
+        planks.push(newPlank)
+        if (mPPi === 4) {
+            mPPi = 0
+        } else {
+            mPPi++
+        }
     }
 
     var max = Point.max(0, this.point + this.vector);
@@ -77,41 +107,16 @@ Plank.prototype.move = function () {
 
 }
 
-var move = "";
-var left = 0;
-var right = 0;
-
-function randomIntFromInterval(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min)
-}
-
-function createPlanks(_amount, _offset) {
-    var offset = 0;
-    for (var i = 0; i < _amount; i++) {
-        var y
-        if (i === 0 && !_offset) {
-            y = randomIntFromInterval(650, 700)
-        } else {
-            if (_offset) {
-                offset = _offset
-            }
-            y = randomIntFromInterval(offset - 70, offset - 140)
-        }
-        offset = y
-        var x = randomIntFromInterval(0, 300)
-        var position = new Point(x, y),
+function createPlanks(_points) {
+    for (var i = 0; i < _points.length; i++) {
+        console.log(_points[i])
+        var position = new Point(_points[i].x, _points[i].y)
             plank = new Plank(position)
         planks.push(plank);
-
     }
 }
 
-createPlanks(5, null)
-
-for (var i = 0; i < planks.length; i++) {
-    console.log(planks[i])
-}
-
+createPlanks(startPlankPoints)
 
 Ball.prototype.iterate = function () {
     var size = view.size;
@@ -121,15 +126,33 @@ Ball.prototype.iterate = function () {
     if (pre.y < this.radius || pre.y > size.height - this.radius) {
         console.log(this.vector.y)
         this.vector.y = this.bounce;
+        if (startJumps > 3) {
+            startAnimating(0)
+            var textItem = new PointText({
+                point: [20, 30],
+                fillColor: 'black',
+                content: 'you lost',
+                fontSize: 50
+            });
+        }
     } else {
         for (var i = 0; i < planks.length; i++) {
             if (pre.y < planks[i].point.y && pre.y > planks[i].point.y - 40 && pre.x > planks[i].point.x - 150 && pre.x < planks[i].point.x + 150 && this.vector.y > 8) {
                 this.vector.y = this.bounce;
-                movePlanks = true
-                stopPlanksMoving()
+                if (startJumps > 3) {
+                    movePlanks = true
+                    stopPlanksMoving()
+                } else {
+                    startJumps++
+                }
+
                 break
             }
         }
+    }
+    if (pre.y < size.height / 2) {
+        movePlanks = true
+        stopPlanksMoving()
     }
     var max = Point.max(this.radius, this.point + this.vector);
 
@@ -152,9 +175,6 @@ Ball.prototype.iterate = function () {
     }
 };
 
-
-var balls = [];
-
 function createBalls() {
     for (var i = 0; i < 1; i++) {
         var position = new Point(50, 50) * view.size,
@@ -166,23 +186,55 @@ function createBalls() {
 
 createBalls()
 
-// var textItem = new PointText({
-//     point: [20, 30],
-//     fillColor: 'black',
-//     content: 'Click, drag and release to add balls.'
-// });
+
+
+
+var stop = false;
+var frameCount = 0;
+var $results = $("#results");
+var fps, fpsInterval, startTime, now, then, elapsed;
+
+
+
+// constant frame rate animation code from:
+// https://stackoverflow.com/questions/19764018/controlling-fps-with-requestanimationframe
+// initialize the timer variables and start the animation
+function startAnimating(fps) {
+    fpsInterval = 1000 / fps;
+    then = Date.now();
+    startTime = then;
+    animate();
+}
+startAnimating(30)
+
+// the animation loop calculates time elapsed since the last loop
+// and only draws if your specified fps interval is achieved
+function animate() {
+    // request another frame
+    requestAnimationFrame(animate);
+    // calc elapsed time since last loop
+    now = Date.now();
+    elapsed = now - then;
+    // if enough time has elapsed, draw the next frame
+    if (elapsed > fpsInterval) {
+        // Get ready for next frame by setting then=now, but also adjust for your
+        // specified fpsInterval not being a multiple of RAF's interval (16.7ms)
+        then = now - (elapsed % fpsInterval);
+        // Put your drawing code here
+        for (var i = 0, l = balls.length; i < l; i++) {
+            balls[i].iterate();
+        }
+        if (movePlanks === true) {
+            for (var p = 0; p < planks.length; p++) {
+                planks[p].move()
+            }
+        }
+    }
+}
+
 
 
 function onFrame() {
-    for (var i = 0, l = balls.length; i < l; i++) {
-        balls[i].iterate();
-    }
-    if (movePlanks === true) {
-        for (var p = 0; p < planks.length; p++) {
-            planks[p].move()
-        }
-    }
-
 
 }
 
