@@ -2,8 +2,8 @@
 //     console.log(eventObject.keyCode);
 // });
 var movePlanks = false;
-function stopPlanksMoving() {
+function stopPlanksMoving(_timeout) {
     setTimeout(() => {
         movePlanks = false
-    },250)
+    },_timeout)
 }

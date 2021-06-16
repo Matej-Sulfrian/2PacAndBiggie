@@ -12,14 +12,17 @@ var startPlankPoints = [
     {"x": view.size.width / 5, "y": view.size.height - 490},
     {"x": view.size.width / 2, "y": view.size.height - 620}
 ];
-var startJumps = 1;
+var startJumps = 2;
 
 var morePlankPoints = [
     {"x": view.size.width / 4, "y": 0},
     {"x": view.size.width / 3, "y": 0},
     {"x": view.size.width / 5, "y": 0},
     {"x": view.size.width / 2, "y": 0},
-    {"x": view.size.width / 1.5, "y": 0}
+    {"x": view.size.width / 1.5, "y": 0},
+    {"x": view.size.width / 3, "y": 0},
+    {"x": view.size.width / 5, "y": 0},
+    {"x": view.size.width / 1, "y": 0}
 ];
 var mPPi = 0;
 
@@ -58,7 +61,7 @@ var Ball = function (point, vector) {
 var Plank = function (point) {
     this.point = point;
     this.vector = new Point(0, 0)
-    this.gravity = new Point(0, 20)
+    this.gravity = new Point(0, 10)
     var color = {
         hue: Math.random() * 360,
         saturation: 1,
@@ -86,7 +89,7 @@ Plank.prototype.move = function () {
     var size = view.size
     this.vector = this.gravity
 
-    if (this.item.position.y >= 700) {
+    if (this.item.position.y >= size.height) {
         // console.log("out")
         this.item.remove()
         planks.shift()
@@ -141,18 +144,17 @@ Ball.prototype.iterate = function () {
                 this.vector.y = this.bounce;
                 if (startJumps > 3) {
                     movePlanks = true
-                    stopPlanksMoving()
+                    stopPlanksMoving(500)
                 } else {
                     startJumps++
                 }
-
                 break
             }
         }
     }
-    if (pre.y < size.height / 3) {
+    if (pre.y < size.height / 2) {
         movePlanks = true
-        stopPlanksMoving()
+        stopPlanksMoving(250)
     }
     var max = Point.max(this.radius, this.point + this.vector);
 
@@ -231,8 +233,6 @@ function animate() {
         }
     }
 }
-
-
 
 function onFrame() {
 
