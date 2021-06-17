@@ -1,0 +1,506 @@
+@font-face {font-family: "Univers"; src: url("content/Univers-LT-59-Ultra-Condensed.woff") format("woff"); }
+
+html, body, #view, .screen {
+    height: 100%;
+    width: 100%;
+}
+
+body, #view {
+    margin: 0;
+    padding: 0;
+    background: -webkit-linear-gradient(bottom, rgb(136, 26, 8) 0%, rgb(184, 50, 28) 60%, rgb(213, 64, 41) 100%);
+    background: -o-linear-gradient(bottom, rgb(136, 26, 8) 0%, rgb(184, 50, 28) 60%, rgb(213, 64, 41) 100%);
+    background: -ms-linear-gradient(bottom, rgb(136, 26, 8) 0%, rgb(184, 50, 28) 60%, rgb(213, 64, 41) 100%);
+    background: -moz-linear-gradient(bottom, rgb(136, 26, 8) 0%, rgb(184, 50, 28) 60%, rgb(213, 64, 41) 100%);
+    background: linear-gradient(to top, rgb(136, 26, 8) 0%, rgb(184, 50, 28) 60%, rgb(213, 64, 41) 100%);
+}
+
+.screen, .right, .left .top, .bottom {
+    display: flex;
+}
+
+.screen, #view {
+    overflow: hidden;
+}
+
+.screen {
+    position: absolute;
+}
+
+/*      SCREEN 1      */
+
+#screen1 .left img {
+    padding: 5px 10px;
+    max-height: 120%;
+    max-width: 100%;
+    transform: translateY(18%);
+}
+
+#screen1 .left {
+    padding: 5px 10px;
+    width: 50%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    transform: translateY(100%);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+#screen1:active .left {
+    transform: translateY(0);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+#screen1 .right {
+    width: 50%;
+    height: 100%;
+    flex-direction: column;
+
+}
+
+#screen1 .right .top, #screen1 .right .bottom {
+    display: flex;
+    height: 50%;
+}
+
+#screen1 .right .top {
+    transform: translateY(-100%);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+#screen1:active .right .top {
+    transform: translateY(0);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+#screen1 .right .top img {
+    height: 80%;
+    align-self: flex-end;
+}
+
+#screen1 .right .bottom {
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+#screen1:active .right .bottom {
+    transform: translateX(0);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+#screen1 h1 {
+    margin-top: 50px;
+}
+
+/*      SCREEN 2      */
+
+#screen2 {
+    flex-direction: column;
+}
+
+#screen2 .top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30%;
+}
+
+#screen2 .top .left, #screen2 .top .middle, #screen2 .top .right {
+    display: flex;
+    width: 33%;
+    align-items: center;
+    justify-content: center;
+}
+
+#screen2 .top .left h1 {
+    transform: translateX(-170%);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+#screen2:active .top .left h1 {
+    transform: translateX(0);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+#screen2 .top .middle img {
+    width: 100%;
+    padding-left: 10%;
+    transform: translateY(-100%);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+#screen2:active .top .middle img {
+    transform: translateY(-33%);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+.logo {
+    width: 150px;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    transform: translateX(150%);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+#screen2:active .logo {
+    transform: translateX(0);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+#screen2 .bottom {
+    height: 70%;
+    width: 100%;
+    display: flex;
+}
+
+#screen2 .bottom .left {
+    width: 30%;
+    position: relative;
+    transform: translateX(-100%);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+#screen2:active .bottom .left {
+    transform: translateX(0);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+#screen2 .bottom .right {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: translateY(100%);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+#screen2:active .bottom .right {
+    transform: translateY(0);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+.bottom .left img:nth-child(1) {
+    width: 55%;
+    position: absolute;
+    left: 5%;
+    z-index: 1;
+}
+
+.bottom .left img:nth-child(2) {
+    width: 55%;
+    position: absolute;
+    left: 30%;
+    top: 5%;
+}
+
+/*       SCREEN 3       */
+#screen3 {
+    display: flex;
+    flex-direction: row;
+}
+
+#screen3:active .logo {
+    transform: translateX(0);
+}
+
+#screen3 .left {
+    width: 45%;
+    margin: 5% 5%;
+    margin-top: 80px;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+#screen3 h1 {
+    margin-bottom: 0;
+    transform: translateY(-180%);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+#screen3:active h1 {
+    transform: translateY(0);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+#screen3 h4 {
+    margin-top: 20%;
+    padding-right: 5%;
+    line-height: 50px;
+    padding-bottom: 0;
+    transform: translateX(-150%);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+#screen3:active h4 {
+    transform: translateX(0);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+#screen3 .right {
+    position: relative;
+    width: 45%;
+    height: 100%;
+}
+
+#screen3 .right img:nth-child(1) {
+    width: 45%;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    transform: translateY(150%);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+#screen3:active .right img:nth-child(1), #screen3:active .right img:nth-child(2) {
+    transform: translateY(0);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+#screen3 .right img:nth-child(2) {
+    width: 35%;
+    position: absolute;
+    top: 45%;
+    left: 30%;
+    z-index: 1;
+    transform: translateY(150%);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+h1 {
+    font-size: 92px;
+    font-family: 'Univers', Arial, sans-serif;
+    color: #EEECC1;
+    font-weight: lighter;
+    text-shadow: 8px 8px 15px #000000;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 60px;
+    font-family: 'Univers', Arial, sans-serif
+}
+
+h3 {
+    font-size: 42px;
+    font-family: 'Univers', Arial, sans-serif;
+    font-weight: lighter;
+    color: #090C0D;
+    margin: 0;
+}
+
+h4 {
+    font-size: 38px;
+    font-family: 'Univers', Arial, sans-serif;
+    font-weight: lighter;
+    color: #EEECC1;
+    line-height: 50px;
+    padding-bottom: 50px;
+    padding-right: 20%;
+    margin: 0;
+}
+
+h5 {
+    font-size: 24px;
+    font-family: 'Univers', Arial, sans-serif;
+    color: #EEECC1;
+}
+
+h6 {
+    font-size: 18px;
+    font-family: 'Univers', Arial, sans-serif;
+    color: #EEECC1;
+}
+
+@media all and (max-width: 1090px){
+    h1 {
+        font-size: 72px;
+    }
+    #screen3 h1 {
+        font-size: 92px;
+    }
+    h3 {
+        font-size: 32px;
+    }
+    h4 {
+        font-size: 28px;
+    }
+    #screen1 .right .top img {
+        height: 60%;
+    }
+    #screen2 .bottom .left {
+        margin-top: 10%;
+    }
+    #screen3 .right {
+        margin-top: 10%;
+    }
+}
+
+@media all and (max-width: 870px) {
+    h1 {
+        font-size: 52px;
+    }
+    h3 {
+        font-size: 22px;
+    }
+    h4 {
+        font-size: 24px;
+        line-height: 30px;
+        padding-bottom: 30px;
+    }
+    #screen3 h4 {
+        font-size: 24px;
+    }
+    #screen1 .right .top img {
+        height: 60%;
+    }
+    #screen2 .bottom .left {
+        margin-top: 20%;
+    }
+    #screen3 .right {
+        margin-top: 20%;
+    }
+    #screen3 .right img:nth-child(2) {
+        top: 30%
+    }
+}
+
+@media all and (max-width: 645px){
+    h1 {
+        margin-top: 40% !important;
+        font-size: 42px;
+    }
+    #screen3 h1 {
+        margin-top: 0 !important;
+    }
+    h3 {
+        font-size: 22px;
+    }
+    h4 {
+        padding-right: 0;
+    }
+    #screen3 h4 {
+        font-size: 20px;
+    }
+    #screen1 .right .top img {
+        height: 60%;
+        align-self: center;
+        transform: translateX(-50%);
+    }
+    #screen2 .top {
+        align-items: flex-start;
+    }
+    .logo {
+        width: 80px !important;
+        top: 25px !important;
+        right: 25px !important;
+    }
+    #screen2 .bottom .left {
+        margin-top: 30%;
+        height: 70%;
+    }
+    #screen2:active .top .middle img {
+        transform: translateY(-50%);
+    }
+    #screen2 .top .middle img {
+        transform: translateY(-150%);
+    }
+    #screen2 .bottom {
+         flex-direction: column-reverse;
+     }
+    #screen2 .bottom .left, #screen2 .bottom .right {
+        width: 90%;
+        height: 50%;
+        align-items: center;
+        justify-content: center;
+    }
+    #screen2 .bottom .right {
+        padding: 0 5%;
+        height: 30%;
+        transform: translateY(400%);
+    }
+    #screen2:active .bottom .right {
+        transform: translateY(0);
+    }
+    #screen2 .bottom .left {
+        margin-top: 10%;
+    }
+
+    #screen3 .left {
+        margin-top: 30px;
+    }
+}
+
+@media all and (max-width: 460px){
+    #screen1 .left img {
+        transform: translateY(0);
+        padding-bottom: 10%;
+    }
+    #screen2 .top {
+        height: 10%;
+    }
+    #screen2:active .top .left {
+        transform: translatex(100px);
+    }
+    #screen2 .bottom {
+        height: 90%;
+    }
+    h1 {
+        min-width: 300px;
+        transform: translateX(100px)
+    }
+    #screen3 h1 {
+        transform: translateX(0);
+        font-size: 62px;
+    }
+    h4 {
+        font-size: 18px;
+        padding-bottom: 15px;
+        line-height: 20px;
+    }
+    #screen3 h4 {
+        font-size: 18px;
+        line-height: 30px;
+    }
+    #screen3 {
+        flex-direction: column;
+    }
+    #screen3 .left {
+        width: 95%;
+        height: 50%;
+    }
+    #screen3 .right {
+        width: 100%;
+        height: 50%;
+        margin-top: 0;
+        margin-left: 10%;
+        margin-bottom: 5%;
+    }
+}
