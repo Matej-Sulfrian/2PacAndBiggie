@@ -121,7 +121,7 @@ body, #view {
 }
 
 #screen2 .top .left h1 {
-    transform: translateX(-170%);
+    transform: translateX(-200%);
     transition: all 0.5s;
     transition-timing-function: ease-out;
 }
@@ -306,13 +306,13 @@ body, #view {
     margin-bottom: 0;
     margin-top: 60px;
     margin-left: 5%;
-    transform: translateY(-180%);
+    transform: translateX(-180%);
     transition: all 0.5s;
     transition-timing-function: ease-out;
 }
 
 #screen4.active h1 {
-    transform: translateY(0);
+    transform: translateX(0);
     transition: all 0.5s;
     transition-timing-function: ease-out;
 }
