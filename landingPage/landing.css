@@ -47,7 +47,7 @@ body, #view {
     transition-timing-function: ease-out;
 }
 
-#screen1:active .left {
+#screen1.active .left {
     transform: translateY(0);
     transition: all 0.5s;
     transition-timing-function: ease-out;
@@ -71,7 +71,7 @@ body, #view {
     transition-timing-function: ease-out;
 }
 
-#screen1:active .right .top {
+#screen1.active .right .top {
     transform: translateY(0);
     transition: all 0.5s;
     transition-timing-function: ease-out;
@@ -89,7 +89,7 @@ body, #view {
     transition-timing-function: ease-out;
 }
 
-#screen1:active .right .bottom {
+#screen1.active .right .bottom {
     transform: translateX(0);
     transition: all 0.5s;
     transition-timing-function: ease-out;
@@ -126,7 +126,7 @@ body, #view {
     transition-timing-function: ease-out;
 }
 
-#screen2:active .top .left h1 {
+#screen2.active .top .left h1 {
     transform: translateX(0);
     transition: all 0.5s;
     transition-timing-function: ease-out;
@@ -140,8 +140,8 @@ body, #view {
     transition-timing-function: ease-out;
 }
 
-#screen2:active .top .middle img {
-    transform: translateY(-33%);
+#screen2.active .top .middle img {
+    transform: translateY(-38%);
     transition: all 0.5s;
     transition-timing-function: ease-out;
 }
@@ -156,7 +156,7 @@ body, #view {
     transition-timing-function: ease-out;
 }
 
-#screen2:active .logo {
+#screen2.active .logo {
     transform: translateX(0);
     transition: all 0.5s;
     transition-timing-function: ease-out;
@@ -176,7 +176,7 @@ body, #view {
     transition-timing-function: ease-out;
 }
 
-#screen2:active .bottom .left {
+#screen2.active .bottom .left {
     transform: translateX(0);
     transition: all 0.5s;
     transition-timing-function: ease-out;
@@ -192,7 +192,7 @@ body, #view {
     transition-timing-function: ease-out;
 }
 
-#screen2:active .bottom .right {
+#screen2.active .bottom .right {
     transform: translateY(0);
     transition: all 0.5s;
     transition-timing-function: ease-out;
@@ -218,7 +218,7 @@ body, #view {
     flex-direction: row;
 }
 
-#screen3:active .logo {
+#screen3.active .logo {
     transform: translateX(0);
 }
 
@@ -238,7 +238,7 @@ body, #view {
     transition-timing-function: ease-out;
 }
 
-#screen3:active h1 {
+#screen3.active h1 {
     transform: translateY(0);
     transition: all 0.5s;
     transition-timing-function: ease-out;
@@ -254,7 +254,7 @@ body, #view {
     transition-timing-function: ease-out;
 }
 
-#screen3:active h4 {
+#screen3.active h4 {
     transform: translateX(0);
     transition: all 0.5s;
     transition-timing-function: ease-out;
@@ -271,12 +271,12 @@ body, #view {
     position: absolute;
     top: 20%;
     left: 10%;
-    transform: translateY(150%);
+    transform: translateY(200%);
     transition: all 0.5s;
     transition-timing-function: ease-out;
 }
 
-#screen3:active .right img:nth-child(1), #screen3:active .right img:nth-child(2) {
+#screen3.active .right img:nth-child(1), #screen3.active .right img:nth-child(2) {
     transform: translateY(0);
     transition: all 0.5s;
     transition-timing-function: ease-out;
@@ -288,7 +288,161 @@ body, #view {
     top: 45%;
     left: 30%;
     z-index: 1;
-    transform: translateY(150%);
+    transform: translateY(200%);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+/*        SCREEN 4      */
+#screen4 {
+    flex-direction: column;
+}
+
+#screen4.active .logo {
+    transform: translateX(0);
+}
+
+#screen4 h1 {
+    margin-bottom: 0;
+    margin-top: 60px;
+    margin-left: 5%;
+    transform: translateY(-180%);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+#screen4.active h1 {
+    transform: translateY(0);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+#screen4 .top {
+    width: 100%;
+    height: 20%;
+}
+
+#screen4 .bottom {
+    width: 80%;
+    margin: 0 10%;
+    height: 80%;
+    position: relative;
+}
+
+#screen4 .bottom img {
+    position: absolute;
+    width: 20%;
+    top: 10%;
+    left: 10%;
+    transform: translateX(-700%);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+#screen4.active .bottom img {
+    transform: translateX(0);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+#screen4 .bottom img:nth-child(2) {
+    left: 25%;
+    transform: translateX(-300%);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+#screen4.active .bottom img:nth-child(2) {
+    transform: translateX(0);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+#screen4 .bottom img:nth-child(3) {
+    left: 40%;
+    z-index: 2;
+    transform: translateY(200%);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+#screen4.active .bottom img:nth-child(3) {
+    transform: translateY(0);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+#screen4 .bottom img:nth-child(4) {
+    left: 55%;
+    z-index: 1;
+    transform: translateX(300%);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+#screen4.active .bottom img:nth-child(4) {
+    transform: translateX(0);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+#screen4 .bottom img:nth-child(5) {
+    left: 70%;
+    transform: translateX(700%);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+#screen4.active .bottom img:nth-child(5) {
+    transform: translateX(0);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+/*      SCREEN 6     */
+#screen5 {
+    flex-direction: column;
+}
+
+#screen5 .top, #screen5 .bottom {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#screen5 .top h1 {
+    transform: translateY(-600%);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+#screen5 .bottom img {
+    position: relative !important;
+    transform: translateY(400%);
+    width: 120px;
+    margin-left: 7%;
+    margin-bottom: 3%;
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+#screen5.active .bottom img {
+    transform: translateY(0);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+#screen5 .bottom h6 {
+    transform: translateY(900%);
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+}
+
+#screen5.active .logo, #screen5.active .top h1, #screen5.active .bottom h6 {
+    transform: translateY(0);
     transition: all 0.5s;
     transition-timing-function: ease-out;
 }
@@ -336,14 +490,15 @@ h5 {
 h6 {
     font-size: 18px;
     font-family: 'Univers', Arial, sans-serif;
-    color: #EEECC1;
+    color: #090C0D;
+    font-weight: lighter;
 }
 
 @media all and (max-width: 1090px){
     h1 {
         font-size: 72px;
     }
-    #screen3 h1 {
+    #screen3 h1, #screen4 h1 {
         font-size: 92px;
     }
     h3 {
@@ -360,6 +515,9 @@ h6 {
     }
     #screen3 .right {
         margin-top: 10%;
+    }
+    #screen4 .bottom {
+        margin-top: 10% !important;
     }
 }
 
@@ -390,6 +548,18 @@ h6 {
     #screen3 .right img:nth-child(2) {
         top: 30%
     }
+    #screen3 .right img:nth-child(1), #screen3 .right img:nth-child(2) {
+        transform: translateY(500%);
+    }
+    #screen4 .bottom {
+        margin-top: 20% !important;
+    }
+    #screen4 .bottom img:nth-child(3) {
+        transform: translateY(400%);
+    }
+    #screen5 .bottom img {
+        margin-left: 12%;
+    }
 }
 
 @media all and (max-width: 645px){
@@ -397,7 +567,14 @@ h6 {
         margin-top: 40% !important;
         font-size: 42px;
     }
-    #screen3 h1 {
+    #screen3 h1, #screen4 h1 {
+        margin-top: 0 !important;
+    }
+    #screen4 h1 {
+        font-size: 62px;
+        margin-top: 40px !important;
+    }
+    #screen5 .top h1 {
         margin-top: 0 !important;
     }
     h3 {
@@ -426,7 +603,7 @@ h6 {
         margin-top: 30%;
         height: 70%;
     }
-    #screen2:active .top .middle img {
+    #screen2.active .top .middle img {
         transform: translateY(-50%);
     }
     #screen2 .top .middle img {
@@ -446,15 +623,17 @@ h6 {
         height: 30%;
         transform: translateY(400%);
     }
-    #screen2:active .bottom .right {
+    #screen2.active .bottom .right {
         transform: translateY(0);
     }
     #screen2 .bottom .left {
         margin-top: 10%;
     }
-
     #screen3 .left {
         margin-top: 30px;
+    }
+    #screen4 .bottom {
+        margin-top: 30% !important;
     }
 }
 
@@ -466,7 +645,7 @@ h6 {
     #screen2 .top {
         height: 10%;
     }
-    #screen2:active .top .left {
+    #screen2.active .top .left {
         transform: translatex(100px);
     }
     #screen2 .bottom {
@@ -479,6 +658,15 @@ h6 {
     #screen3 h1 {
         transform: translateX(0);
         font-size: 62px;
+    }
+    #screen4 h1 {
+        font-size: 42px;
+    }
+    #screen5 .top h1 {
+        margin-top: 0 !important;
+        transform: translateX(0);
+        transform: translateY(-600%);
+        min-width: unset;
     }
     h4 {
         font-size: 18px;
@@ -502,5 +690,8 @@ h6 {
         margin-top: 0;
         margin-left: 10%;
         margin-bottom: 5%;
+    }
+    #screen4 .bottom {
+        margin-top: 50% !important;
     }
 }
