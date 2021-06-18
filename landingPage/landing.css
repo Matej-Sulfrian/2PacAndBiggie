@@ -121,7 +121,7 @@ body, #view {
 }
 
 #screen2 .top .left h1 {
-    transform: translateX(-200%);
+    transform: translateX(-500%);
     transition: all 0.5s;
     transition-timing-function: ease-out;
 }
