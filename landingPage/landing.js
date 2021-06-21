@@ -20,13 +20,20 @@ $(document).ready(() => {
         }
         $(screens[active]).toggleClass("active")
     })
-    $(document).click( () => {
-        $(screens[active]).toggleClass("active")
-        if (active <= 3) {
-            active++
+    $(document).click((e) => {
+        if ($(e.target).parent().hasClass('point_wrap')) {
+            $(screens[active]).toggleClass("active")
+            let i = $(e.target).attr('data-action')
+            active = parseInt(i)
+            $(screens[active]).toggleClass("active")
         } else {
-            active = 0
+            $(screens[active]).toggleClass("active")
+            if (active <= 3) {
+                active++
+            } else {
+                active = 0
+            }
+            $(screens[active]).toggleClass("active")
         }
-        $(screens[active]).toggleClass("active")
     })
 })
