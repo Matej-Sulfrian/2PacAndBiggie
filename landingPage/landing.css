@@ -109,7 +109,7 @@ body, #view {
 }
 
 .menu_wrap:hover {
-    width: 230px;
+    width: 250px;
     height: 260px;
     transition: all 0.3s;
     transition-timing-function: ease-in;
