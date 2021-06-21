@@ -1,6 +1,6 @@
 @font-face {font-family: "Univers"; src: url("content/Univers-LT-59-Ultra-Condensed.woff") format("woff"); }
 
-html, body, #view, .screen {
+html, body, #view, .screen, .img_prev {
     height: 100%;
     width: 100%;
 }
@@ -27,13 +27,46 @@ body, #view {
     position: absolute;
 }
 
+.screen.backdrop {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.close_wrap {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    display: none;
+    z-index: 2;
+}
+
+.img_prev {
+    display: flex;
+    position: absolute;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+.img_prev.backdrop {
+    z-index: 1;
+}
+
+.img_prev img {
+    height: 100%;
+}
+
 /*      MENU          */
 .menu_wrap {
     position: absolute;
     top: 20px;
     left: 20px;
     display: flex;
-    z-index: 1;
+    z-index: 2;
     width: 70px;
     height: 70px;
     overflow: hidden;
@@ -396,16 +429,23 @@ body, #view {
     transform: translateX(-700%);
     transition: all 0.5s;
     transition-timing-function: ease-out;
+    cursor: pointer;
+}
+
+#screen4 .bottom img:hover {
+    margin-top: -30px;
 }
 
 #screen4.active .bottom img {
     transform: translateX(0);
+    z-index: 1;
     transition: all 0.5s;
     transition-timing-function: ease-out;
 }
 
 #screen4 .bottom img:nth-child(2) {
     left: 25%;
+    z-index: 2;
     transform: translateX(-300%);
     transition: all 0.5s;
     transition-timing-function: ease-out;
@@ -419,7 +459,7 @@ body, #view {
 
 #screen4 .bottom img:nth-child(3) {
     left: 40%;
-    z-index: 2;
+    z-index: 3;
     transform: translateY(200%);
     transition: all 0.5s;
     transition-timing-function: ease-out;
@@ -433,7 +473,7 @@ body, #view {
 
 #screen4 .bottom img:nth-child(4) {
     left: 55%;
-    z-index: 1;
+    z-index: 2;
     transform: translateX(300%);
     transition: all 0.5s;
     transition-timing-function: ease-out;
@@ -447,6 +487,7 @@ body, #view {
 
 #screen4 .bottom img:nth-child(5) {
     left: 70%;
+    z-index: 1;
     transform: translateX(700%);
     transition: all 0.5s;
     transition-timing-function: ease-out;
