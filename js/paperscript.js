@@ -1,18 +1,26 @@
 var move = "";
 var left = 0;
 var right = 0;
-
+var score = 0;
+var scoreView = new PointText({
+    point: [(view.size.width / 18), (view.size.height / 20)],
+    fillColor: 'black',
+    content: 'score: ' + score,
+    fontSize: 18
+})
 var planks = [];
 var balls = [];
 
 var startPlankPoints = [
-    {"x": view.size.width / 4, "y": view.size.height - 80},
-    {"x": view.size.width / 3, "y": view.size.height - 210},
-    {"x": view.size.width / 1.5, "y": view.size.height - 360},
-    {"x": view.size.width / 5, "y": view.size.height - 490},
-    {"x": view.size.width / 2, "y": view.size.height - 620}
+    {"x": view.size.width / 3, "y": view.size.height / 1.1},
+    {"x": view.size.width / 5, "y": view.size.height / 1.5},
+    {"x": view.size.width / 1.5, "y": view.size.height / 1.7},
+    {"x": view.size.width / 1.1, "y": view.size.height / 2},
+    {"x": view.size.width / 5, "y": view.size.height / 3},
+    {"x": view.size.width / 2, "y": view.size.height / 5},
+    {"x": view.size.width / 6, "y": view.size.height / 10}
 ];
-var startJumps = 2;
+var startJumps = 3;
 
 var morePlankPoints = [
     {"x": view.size.width / 4, "y": 0},
@@ -30,14 +38,14 @@ var Ball = function (point, vector) {
     this.vector = vector;
     this.point = point;
     this.gravity = 0.9;
-    this.bounce = -15;
+    this.bounce = -13;
     var color = {
         hue: Math.random() * 360,
         saturation: 1,
         brightness: 1
     };
     var gradient = new Gradient([color, 'black'], true);
-    var radius = this.radius = 30;
+    var radius = this.radius = 20;
     var ball = new CompoundPath({
         children: [
             new Path.Circle({
@@ -67,12 +75,11 @@ var Plank = function (point) {
         saturation: 1,
         brightness: 1
     };
-    var radius = this.size = new Size(20, 20)
+    // var radius = this.size = new Size(10, 10)
     var plank = new CompoundPath({
         children: [
             new Path.Rectangle({
-                rectangle: new Rectangle(this.point, new Point(this.point.x + 100, this.point.y + 20)),
-                radius: radius
+                rectangle: new Rectangle(this.point, new Point(this.point.x + 50, this.point.y + 10))
             }),
         ],
         fillColor: new Color(color)
@@ -126,25 +133,30 @@ Ball.prototype.iterate = function () {
     this.vector.y += this.gravity;
     var pre = this.point + this.vector;
 
+   scoreView.content = 'score: ' + score
+
+    // sendPosition(parseInt(this.point.x), parseInt(this.point.y))
+
     if (pre.y < this.radius || pre.y > size.height - this.radius) {
-        console.log(this.vector.y)
         this.vector.y = this.bounce;
         if (startJumps > 3) {
             startAnimating(0)
-            var textItem = new PointText({
-                point: [20, 30],
+            var lost = new PointText({
+                point: [(size.width / 3.5), (size.height / 2)],
                 fillColor: 'black',
                 content: 'you lost',
                 fontSize: 50
             });
+
         }
     } else {
         for (var i = 0; i < planks.length; i++) {
-            if (pre.y < planks[i].point.y && pre.y > planks[i].point.y - 40 && pre.x > planks[i].point.x - 100 && pre.x < planks[i].point.x + 100 && this.vector.y > 8) {
+            if (pre.y < planks[i].point.y && pre.y > planks[i].point.y - 20 && pre.x > planks[i].point.x - 50 && pre.x < planks[i].point.x + 50 && this.vector.y > 8) {
                 this.vector.y = this.bounce;
                 if (startJumps > 3) {
                     movePlanks = true
                     stopPlanksMoving(500)
+                    score += 50
                 } else {
                     startJumps++
                 }
