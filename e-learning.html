@@ -16,7 +16,7 @@
     <header>
         <div class="top-h">
             <div class="left">
-                <div  class="logo-wrap">
+                <div class="logo-wrap">
                     <img src="e-learning/content/HFU.png" alt="logo">
                     <img src="e-learning/content/Icon%20awesome-video.png" alt="logo" style="width: 50px; height: 30px">
                 </div>
@@ -40,13 +40,17 @@
         </div>
     </header>
     <div class="mid">
-        <img src="e-learning/content/Icon%20ionic-ios-arrow-back.png" alt="">
-        <iframe width="50%" height="90%" src="https://www.youtube.com/embed/b_CKItV6Epk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <img src="e-learning/content/Icon%20ionic-ios-arrow-back-1.png" alt="">
+        <img class="go-left" src="e-learning/content/Icon%20ionic-ios-arrow-back.png" alt="">
+        <iframe class="vid" width="50%" height="90%" src="https://www.youtube.com/embed/b_CKItV6Epk"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        <img class="go-right" src="e-learning/content/Icon%20ionic-ios-arrow-back-1.png" alt="">
     </div>
     <div class="down">
         <p class="hashtags">#HFU #AffektiveMotive #Unterhaltung #Schnackenklatscher</p>
-        <h4>Lernen im Affekt - "Unterhaltung als Funktion"</h4>
+        <h4>Lernen im Affekt - Intro</h4>
         <div class="bot-sec">
             <div class="play-like">
                 <img src="e-learning/content/Icon%20ionic-md-play.png" alt="play">
@@ -61,6 +65,15 @@
     </div>
 </div>
 <div class="mid-sec">
+    <div class="step-bar">
+        <div class="point">1</div>
+        <div class="point">2</div>
+        <div class="point">3</div>
+        <div class="point">4</div>
+        <div class="point">5</div>
+        <div class="inner-step-bar">
+        </div>
+    </div>
     <h1>Knowledge is power!</h1>
     <h2>Teste dein Wissen zum Video.</h2>
     <div class="bottom">
@@ -74,32 +87,285 @@
     </div>
 </div>
 <div class="quiz-sec">
-    <div class="quiz" id="1">
-        <div class="question-sec">
-            <h3>In wieviele Gegensatzpaare setzt Rober Plutchik Emotionen dar?</h3>
-            <div class="answer-sec">
-                <label>
-                    <input type="checkbox">
-                    6
-                </label>
-                <label>
-                    <input type="checkbox">
-                    5
-                </label>
-                <label>
-                    <input type="checkbox">
-                    4
-                </label>
-                <label>
-                    <input type="checkbox">
-                    Zwölfzich
-                </label>
+    <div class="quiz 0" id="0">
+        <div class="left">
+            <div class="question-sec">
+                <h3>Welche 4 Motive beschreiben die Affektive Motive?</h3>
+                <div class="answer-sec">
+                    <label>
+                        <input type="checkbox">
+                        Entspannung, Spannung, Zeitvertreib bzw. Beseitigung von Langeweile und Eskapismus
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Entspannung, Angst, Ehrgeiz, Langeweile
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Sexuelle Erregung, Unterhaltung, Entspannung, Traurigkeit
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Entspannung, Spannung, Prokrastination, Spaß
+                    </label>
+                </div>
+            </div>
+            <div class="question-sec">
+                <h3>Affektive Motive sind…?</h3>
+                <div class="answer-sec">
+                    <label>
+                        <input type="checkbox">
+                        Rauschhafte Befreiung
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Zweckfrei
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Unnötig
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Wohlgefallen am Guten
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="question-sec">
+                <h3>Welche Aussage ist richtig?</h3>
+                <div class="answer-sec">
+                    <label>
+                        <input type="checkbox">
+                        Medien stellen Unterhaltung dar!
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Medien stellen gar keine Unterhaltung dar, sondern nur Unterhaltungspotenziale!
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Medien stellen Unterhaltungspotenziale und Unterhaltung!
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Medien stellen Potenziale zur Belustigung dar!
+                    </label>
+                </div>
             </div>
         </div>
     </div>
-    <div class="quiz" id="2"></div>
-    <div class="quiz" id="3"></div>
-    <div class="quiz" id="4"></div>
+    <div class="quiz 1" id="1">
+        <div class="left">
+            <div class="question-sec">
+                <h3>In wie viele Gegensatzpaare stellte Robert Plutchik Emotionen dar?</h3>
+                <div class="answer-sec">
+                    <label>
+                        <input type="checkbox">
+                        5 </label>
+                    <label>
+                        <input type="checkbox">
+                        4
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Zwölfenzich </label>
+                    <label>
+                        <input type="checkbox">
+                        9
+                    </label>
+                </div>
+            </div>
+            <div class="question-sec">
+                <h3>Durch was lassen sich Unterhaltungsmotive beschreiben?</h3>
+                <div class="answer-sec">
+                    <label>
+                        <input type="checkbox">
+                        Durch Eskapismus
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Durch Emotionen
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Durch Bedürfnisse
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Durch Erregungsniveaus
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="question-sec">
+                <h3>Wie definiert man Unterhaltung als reinen Selbstzweck?</h3>
+                <div class="answer-sec">
+                    <label>
+                        <input type="checkbox">
+                        Das Verbringen angenehmer Zeit
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Das spielen von Videospielen
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Sexuelle Erregung
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Vorlesung bei Herr Dittler
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="quiz 2" id="2">
+        <div class="left">
+            <div class="question-sec">
+                <h3>Eskapismus ist ein kommunikationswissenschaftlicher Ansatz zur Erklärung von:</h3>
+                <div class="answer-sec">
+                    <label>
+                        <input type="checkbox">
+                        Lernmotivation
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Kollaborativer Motivation
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Unterschwelliger Motivation
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Unterhaltungsmotivation
+                    </label>
+                </div>
+            </div>
+            <div class="question-sec">
+                <h3>Folgende Aussagen treffen im Kontext des Kapitels zu:</h3>
+                <div class="answer-sec">
+                    <label>
+                        <input type="checkbox">
+                        Eskapismus legt einen leichten und entspannten Alltag zu Grunde
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Menschen entfliehen psychischer Spannung durch reelle Medieninhalte
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Menschen entfliehen psychischer Spannung durch nicht reelle Medieninhalte
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Eskapismus legt einen harten und frustrierenden Alltag zu Grunde
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="question-sec">
+                <h3>McQuail nennt folgende eskapistische Motive:</h3>
+                <div class="answer-sec">
+                    <label>
+                        <input type="checkbox">
+                        Stress in Beruf und Familie
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Überforderung und Burnout
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Langeweile im Alltag
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Emotionsüberflutung
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Emotionen die nicht ausgelebt werden
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="quiz 3" id="3">
+        <div class="left">
+            <div class="question-sec">
+                <h3>Was Besagt der Mood-Management-Ansatz?</h3>
+                <div class="answer-sec">
+                    <label>
+                        <input type="checkbox">
+                        Leute die eine unangenehme Stimmung erleben, versuchen diese zu beenden oder abzuschwächen.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Leute die eine angenehm gestimmt sind wollen endlich wieder schlecht gelaunt sein.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Dumme Leute dumme Sachen konsumieren.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Leute, um sich zu unterhalten, ausschließlich Football-Manager 2016 spielen.
+                    </label>
+                </div>
+            </div>
+            <div class="question-sec">
+                <h3>Was erklärt NICHT warum wir, trotz schlechter Stimmungslage, traurige Medien rezipieren?</h3>
+                <div class="answer-sec">
+                    <label>
+                        <input type="checkbox">
+                        Ödipuskomplex
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Katharsis
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Sozialer Vergleich
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Meta-Emotionen
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="question-sec">
+                <h3>Mit was beschäftigt sich der Mood-Adjustment-Effekt?</h3>
+                <div class="answer-sec">
+                    <label>
+                        <input type="checkbox">
+                        Welche TV-Lautstärke am besten geeignet ist.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Damit das Menschen versuchen, ihre Stimmung auf eine kommende Tätigkeit hin auszurichten.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Welchen Effekt es hat 3300 Folgen Rote Rosen ohne Unterbrechung zu schauen.
+                    </label>
+                    <label>
+                        <input type="checkbox">
+                        Aggressive Persönlichkeiten eher Gewalt und Action rezipieren.
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="answer-button">Ergebniss</div>
 </div>
 </body>
 </html>
