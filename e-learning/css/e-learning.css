@@ -101,6 +101,7 @@ header .input-wrap input:focus {
 
 header .input-wrap img {
     width: 20px;
+    cursor: pointer;
 }
 
 header .bottom {
@@ -144,6 +145,7 @@ header .bottom {
 }
 
 .top .mid {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -312,7 +314,7 @@ header .bottom {
     width: 100px;
     height: 30px;
     border-radius: 5px;
-    background-color: #05CECF;
+    background-color: #05cecf;
     color: white;
     font-weight: lighter;
     margin-left: auto;
@@ -322,5 +324,44 @@ header .bottom {
 
 label {
     color: grey;
+}
+
+.popup {
+    position: absolute;
+    top: 15%;
+    left: 27.5%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: 55%;
+    padding: 2.5%;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(5, 206, 207, 0.8);
+    color: white;
+    z-index: 2;
+}
+
+.popup h3 {
+    display: none;
+    margin: 0 20%;
+    margin-top: 20px;
+}
+
+.popup .ok {
+    width: 20%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F5F5F5;
+    color: grey;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: auto;
+    margin-bottom: 15px;
 }
 
