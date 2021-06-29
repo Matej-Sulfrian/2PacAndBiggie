@@ -150,6 +150,10 @@ window.addEventListener("resize", () => {
 function nextVid () {
     if (vidSrc[actualVid].done === true) {
         $('.quiz.' + actualVid).hide()
+        if (actualVid === 0) {
+            $('.point:nth-child(1)').css('background-color', '#05cecf')
+            $('.point:nth-child(1)').css('color', 'white')
+        }
         actualVid++
         stepBarWidth += 16.66
         if (firstDone) {
