@@ -1,5 +1,5 @@
 var vidSrc = [
-    {src: "https://www.youtube.com/embed/b_CKItV6Epk", done: false, title: "Lernen im Affekt - Intro"},
+    {src: "https://www.youtube.com/embed/b_CKItV6Epk", done: true, title: "Lernen im Affekt - Intro"},
     {src: "https://www.youtube.com/embed/PztKzYzRTzA", done: false, title: "Lernen im Affekt - Unterhaltung als Funtion"},
     {src: "https://www.youtube.com/embed/1rFvKpQDDdU", done: false, title: "Lernen im Affekt - Unterhaltungsdimensionen"},
     {src: "https://www.youtube.com/embed/y5X0RGNy2dI", done: false, title: "Lernen im Affekt - Eskapismus"},
