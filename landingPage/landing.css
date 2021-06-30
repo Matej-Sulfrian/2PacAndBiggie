@@ -279,7 +279,7 @@ body, #view {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    transform: translateY(100%);
+    transform: translateY(150%);
     transition: all 0.5s;
     transition-timing-function: ease-out;
 }
