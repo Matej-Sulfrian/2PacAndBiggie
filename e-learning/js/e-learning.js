@@ -1,9 +1,9 @@
 var vidSrc = [
     {src: "https://www.youtube.com/embed/b_CKItV6Epk", done: true, title: "Lernen im Affekt - Intro"},
-    {src: "https://www.youtube.com/embed/PztKzYzRTzA", done: false, title: "Lernen im Affekt - Unterhaltung als Funtion"},
+    {src: "https://www.youtube.com/embed/O_lD7cibgUY", done: false, title: "Lernen im Affekt - Unterhaltung als Funtion"},
     {src: "https://www.youtube.com/embed/1rFvKpQDDdU", done: false, title: "Lernen im Affekt - Unterhaltungsdimensionen"},
-    {src: "https://www.youtube.com/embed/y5X0RGNy2dI", done: false, title: "Lernen im Affekt - Eskapismus"},
-    {src: "https://www.youtube.com/embed/guNktw26HQs", done: false, title: "Lernen im Affekt - Stimmungsregulierung & Stressbewältigung"}
+    {src: "https://www.youtube.com/embed/qbHqUcrZ8SA", done: false, title: "Lernen im Affekt - Eskapismus"},
+    {src: "https://www.youtube.com/embed/0racPAfLkZE", done: false, title: "Lernen im Affekt - Stimmungsregulierung & Stressbewältigung"}
 ]
 var actualVid = 0;
 
