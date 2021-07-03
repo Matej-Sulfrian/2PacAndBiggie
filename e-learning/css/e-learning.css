@@ -365,3 +365,39 @@ label {
     margin-bottom: 15px;
 }
 
+.link-sec {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.link-sec p {
+    margin: 10px 0;
+}
+
+.link-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: #05cecf;
+    color: white;
+    font-weight: lighter;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.link-sec .bottom {
+    margin-top: 30px;
+    height: 5px;
+    width: 100%;
+    display: flex;
+}
+
