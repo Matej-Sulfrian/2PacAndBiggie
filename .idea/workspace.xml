@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6b17368c-3bea-41ea-a8ca-d4ad6a2150ef" name="Default Changelist" comment="commit" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <branch-grouping />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1soGTPQXXybzj0N2MsYtZnOCtrM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="sortByType" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/e-learning/content" />
+      <recent name="$PROJECT_DIR$/server" />
+      <recent name="$PROJECT_DIR$/landingPage/content" />
+      <recent name="$PROJECT_DIR$/landingPage" />
+      <recent name="$PROJECT_DIR$/js" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/landingPage/content" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/js" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="server.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/server/server.php">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHP Script.server.php" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6b17368c-3bea-41ea-a8ca-d4ad6a2150ef" name="Default Changelist" comment="" />
+      <created>1621531535574</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1621531535574</updated>
+      <workItem from="1621531536721" duration="9121000" />
+      <workItem from="1622015625125" duration="36000" />
+      <workItem from="1622033778741" duration="94000" />
+      <workItem from="1623077618140" duration="7454000" />
+      <workItem from="1623140719615" duration="88000" />
+      <workItem from="1623175622861" duration="7804000" />
+      <workItem from="1623235010028" duration="909000" />
+      <workItem from="1623254069972" duration="3194000" />
+      <workItem from="1623326285798" duration="14527000" />
+      <workItem from="1623410957665" duration="5034000" />
+      <workItem from="1623868736026" duration="887000" />
+      <workItem from="1623928738659" duration="24646000" />
+      <workItem from="1624001958433" duration="13103000" />
+      <workItem from="1624269678373" duration="25652000" />
+      <workItem from="1624447578046" duration="5313000" />
+      <workItem from="1624643263104" duration="352000" />
+      <workItem from="1624643731636" duration="2007000" />
+      <workItem from="1624840082384" duration="70000" />
+      <workItem from="1624840194091" duration="6971000" />
+      <workItem from="1624878921598" duration="23241000" />
+      <workItem from="1624959407007" duration="8416000" />
+      <workItem from="1625083511611" duration="118000" />
+      <workItem from="1625326429083" duration="2770000" />
+      <workItem from="1625351588704" duration="47000" />
+      <workItem from="1625501402206" duration="351000" />
+      <workItem from="1625562859194" duration="18000" />
+    </task>
+    <task id="LOCAL-00001" summary="First commit">
+      <created>1621531880517</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1621531880517</updated>
+    </task>
+    <task id="LOCAL-00002" summary="First commit">
+      <created>1621537076826</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1621537076826</updated>
+    </task>
+    <task id="LOCAL-00003" summary="First commit">
+      <created>1621537279508</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1621537279508</updated>
+    </task>
+    <task id="LOCAL-00004" summary="commit">
+      <created>1621537756950</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1621537756950</updated>
+    </task>
+    <task id="LOCAL-00005" summary="commit">
+      <created>1621542733660</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1621542733660</updated>
+    </task>
+    <task id="LOCAL-00006" summary="basic physics">
+      <created>1623183491904</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1623183491904</updated>
+    </task>
+    <task id="LOCAL-00007" summary="basic physics">
+      <created>1623183553892</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1623183553892</updated>
+    </task>
+    <task id="LOCAL-00008" summary="first try level creation">
+      <created>1623258929508</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1623258929508</updated>
+    </task>
+    <task id="LOCAL-00009" summary="second try level creation">
+      <created>1623336365250</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1623336365250</updated>
+    </task>
+    <task id="LOCAL-00010" summary="3. try level creation">
+      <created>1623344483601</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1623344483601</updated>
+    </task>
+    <task id="LOCAL-00011" summary="level creation alpha for iPhone X">
+      <created>1623414999800</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1623414999800</updated>
+    </task>
+    <task id="LOCAL-00012" summary="level creation alpha 1.1 for iPhone X">
+      <created>1623415565860</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1623415565860</updated>
+    </task>
+    <task id="LOCAL-00013" summary="level difficulty adjustment 1.0">
+      <created>1623869651233</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1623869651233</updated>
+    </task>
+    <task id="LOCAL-00014" summary="first commit landing page">
+      <created>1623967477437</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1623967477437</updated>
+    </task>
+    <task id="LOCAL-00015" summary="2. commit landing page">
+      <created>1624017333470</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1624017333470</updated>
+    </task>
+    <task id="LOCAL-00016" summary="landing page">
+      <created>1624017585238</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1624017585238</updated>
+    </task>
+    <task id="LOCAL-00017" summary="landing page, debug">
+      <created>1624018491157</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1624018491157</updated>
+    </task>
+    <task id="LOCAL-00018" summary="landing page, debug">
+      <created>1624020068276</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1624020068276</updated>
+    </task>
+    <task id="LOCAL-00019" summary="landing page menu">
+      <created>1624276814735</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1624276814735</updated>
+    </task>
+    <task id="LOCAL-00020" summary="landing page img prev">
+      <created>1624281675463</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1624281675463</updated>
+    </task>
+    <task id="LOCAL-00021" summary="landing page menu typo">
+      <created>1624281846566</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1624281846566</updated>
+    </task>
+    <task id="LOCAL-00022" summary="landing page css fix">
+      <created>1624282024691</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1624282024691</updated>
+    </task>
+    <task id="LOCAL-00023" summary="part safe">
+      <created>1624449945581</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1624449945581</updated>
+    </task>
+    <task id="LOCAL-00024" summary="missing file">
+      <created>1624643289979</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1624643289979</updated>
+    </task>
+    <task id="LOCAL-00025" summary="First E-Learning">
+      <created>1624881609231</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1624881609231</updated>
+    </task>
+    <task id="LOCAL-00026" summary="E-Learning fix">
+      <created>1624881816100</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1624881816100</updated>
+    </task>
+    <task id="LOCAL-00027" summary="E-Learning fix 1.1">
+      <created>1624882072259</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1624882072259</updated>
+    </task>
+    <task id="LOCAL-00028" summary="E-Learning fix 1.2 (schnackeklatsche)">
+      <created>1624882295356</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1624882295356</updated>
+    </task>
+    <task id="LOCAL-00029" summary="E-Learning fix 1.3">
+      <created>1624882537741</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1624882537741</updated>
+    </task>
+    <task id="LOCAL-00030" summary="E-Learning quiz 1.0">
+      <created>1624885222630</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1624885222630</updated>
+    </task>
+    <task id="LOCAL-00031" summary="E-Learning quiz 1.0 (420)">
+      <created>1624885292646</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1624885292646</updated>
+    </task>
+    <task id="LOCAL-00032" summary="E-Learning first video">
+      <created>1624886507556</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1624886507556</updated>
+    </task>
+    <task id="LOCAL-00033" summary="E-Learning quiz 2.0">
+      <created>1624922892352</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1624922892352</updated>
+    </task>
+    <task id="LOCAL-00034" summary="E-learning final 1st">
+      <created>1624977567135</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1624977567135</updated>
+    </task>
+    <task id="LOCAL-00035" summary="E-learning final 1st (fix)">
+      <created>1624977705295</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1624977705295</updated>
+    </task>
+    <task id="LOCAL-00036" summary="E-learning final 2nd">
+      <created>1624977875471</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1624977875471</updated>
+    </task>
+    <task id="LOCAL-00037" summary="E-learning final 2nd (title fix)">
+      <created>1624978175358</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1624978175358</updated>
+    </task>
+    <task id="LOCAL-00038" summary="JazzJumper landing page fix">
+      <created>1625083621308</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1625083621308</updated>
+    </task>
+    <task id="LOCAL-00039" summary="E-Learning video links">
+      <created>1625326724829</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1625326724829</updated>
+    </task>
+    <task id="LOCAL-00040" summary="E-Learning youtube playlist">
+      <created>1625344097859</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1625344097859</updated>
+    </task>
+    <task id="LOCAL-00041" summary="E-Learning youtube playlist typo">
+      <created>1625344175084</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1625344175084</updated>
+    </task>
+    <task id="LOCAL-00042" summary="E-Learning links final">
+      <created>1625347969686</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1625347969686</updated>
+    </task>
+    <task id="LOCAL-00043" summary="E-Leraning typo">
+      <created>1625351608422</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1625351608422</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="landing page menu" />
+    <MESSAGE value="landing page img prev" />
+    <MESSAGE value="landing page menu typo" />
+    <MESSAGE value="landing page css fix" />
+    <MESSAGE value="part safe" />
+    <MESSAGE value="missing file" />
+    <MESSAGE value="First E-Learning" />
+    <MESSAGE value="E-Learning fix" />
+    <MESSAGE value="E-Learning fix 1.1" />
+    <MESSAGE value="E-Learning fix 1.2 (schnackeklatsche)" />
+    <MESSAGE value="E-Learning fix 1.3" />
+    <MESSAGE value="E-Learning quiz 1.0" />
+    <MESSAGE value="E-Learning quiz 1.0 (420)" />
+    <MESSAGE value="E-Learning first video" />
+    <MESSAGE value="E-Learning quiz 2.0" />
+    <MESSAGE value="E-learning final 1st" />
+    <MESSAGE value="E-learning final 1st (fix)" />
+    <MESSAGE value="E-learning final 2nd" />
+    <MESSAGE value="E-learning final 2nd (title fix)" />
+    <MESSAGE value="JazzJumper landing page fix" />
+    <MESSAGE value="E-Learning video links" />
+    <MESSAGE value="E-Learning youtube playlist" />
+    <MESSAGE value="E-Learning youtube playlist typo" />
+    <MESSAGE value="E-Learning links final" />
+    <MESSAGE value="E-Leraning typo" />
+    <option name="LAST_COMMIT_MESSAGE" value="E-Leraning typo" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1272" y="533" key="#PHP" timestamp="1624311172914">
+      <screen x="0" y="25" width="3200" height="1722" />
+    </state>
+    <state x="1272" y="533" key="#PHP/3200.625.1920.1175/0.25.3200.1722@0.25.3200.1722" timestamp="1624311172914" />
+    <state x="629" y="362" key="Vcs.Push.Dialog.v2" timestamp="1625351610650">
+      <screen x="0" y="25" width="1680" height="972" />
+    </state>
+    <state x="629" y="362" key="Vcs.Push.Dialog.v2/0.25.1680.972@0.25.1680.972" timestamp="1625351610650" />
+    <state x="719" y="372" key="Vcs.Push.Dialog.v2/0.25.1920.1002/1920.25.1680.1025@0.25.1920.1002" timestamp="1624643291657" />
+    <state x="1198" y="622" key="Vcs.Push.Dialog.v2/3200.625.1920.1175/0.25.3200.1722@0.25.3200.1722" timestamp="1625083623083" />
+    <state x="625" y="241" key="run.anything.popup" timestamp="1624013884609">
+      <screen x="0" y="25" width="1920" height="1002" />
+    </state>
+    <state x="625" y="241" key="run.anything.popup/0.25.1920.1002/1920.25.1680.1025@0.25.1920.1002" timestamp="1624013884609" />
+    <state x="505" y="239" width="670" height="676" key="search.everywhere.popup" timestamp="1624895969838">
+      <screen x="0" y="25" width="1680" height="972" />
+    </state>
+    <state x="505" y="239" width="670" height="676" key="search.everywhere.popup/0.25.1680.972@0.25.1680.972" timestamp="1624895969838" />
+  </component>
+</project>

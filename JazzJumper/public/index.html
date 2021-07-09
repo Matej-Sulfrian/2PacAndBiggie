@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+    <!-- https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+    <script src="js/config.js"></script>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script src="js/paper-full.min.js"></script>
+    <script class="paper" type="text/paperscript" canvas="canvas" src="js/paperscript.js"></script>
+
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="content/Logo.png">
+
+    <title>JazzJumper</title>
+</head>
+<body>
+<p class="instruct">this is JazzJumper Beta V1.0 for PC</p>
+<p class="instruct">simulate phone tilt with "a" and "d"</p>
+<div class="phone-wrapper">
+    <img src="content/phone.png" alt="">
+    <div class="wrapper">
+        <img onclick="backToMenu()" src="content/back.svg" alt="" class="back">
+        <!--<div class="background"></div>-->
+        <div class="login">
+            <img src="content/Logo.png" alt="">
+            <p>enter your name below</p>
+            <input type="text" placeholder="name">
+        </div>
+        <div class="logged">
+
+            <div class="line-status ">
+                <div class="indicator">.</div>
+                <p class="on">online</p>
+                <p class="off">offline</p>
+            </div>
+            <div class="popup">
+                <div data-action="close" class="close" onclick="closePopup()"><p>x</p></div>
+                <div class="message"><p>player "matej" with ID "za91KynQC0PWWxIM8xl1PJMRRwj1" wants to connect with
+                    you...</p></div>
+                <div data-action="close" class="ok" onclick="popupOk()">OK</div>
+            </div>
+            <img class="logo" src="content/Logo.png" alt="">
+
+            <button class="signOut" onclick="signOut()">sign out</button>
+            <div class="menu">
+
+                <p class="white start" onclick="menu(event)">SPIELEN</p>
+                <p class="black" onclick="menu(event)">MULTIPLAYER</p>
+                <p class="white" onclick="menu(event)">BESTENLISTE</p>
+                <p class="black" onclick="menu(event)">OPTIONEN</p>
+            </div>
+            <div class="multiplayer">
+                <div class="user-data" style="display: none">
+                    <p class="name"></p>
+                    <p class="id"></p>
+                    <button onclick="copy()">copy ID</button>
+                </div>
+                <div class="disconnected">
+                    <p>search for user</p>
+                    <input type="text" placeholder="user ID" oninput="checkPlayer()">
+                    <button onclick="connectPlayer()">connect</button>
+                </div>
+                <div class="connected" style="display: none">
+                    <p>you are connected with</p>
+                    <p class="name"></p>
+                    <p class="id"></p>
+                    <button onclick="disconnectPlayer()">disconnect</button>
+                </div>
+            </div>
+            <div class="bestenliste"></div>
+            <div class="optionen">
+                <h1>OPTIONEN</h1>
+                <img src="content/Spalte-best.png" alt="">
+                <div class="setting-row">
+                    <h2>MUSIC:</h2>
+                    <div class="on-off" id="music">
+                        <p class="on active">ON</p>
+                        <p class="off">OFF</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="play-menu-layer">
+            <div class="pause">
+                <p>score: </p>
+                <p class="score">0</p>
+                <img src="content/pause.png" alt="pause" onclick="pauseGame()">
+            </div>
+            <div class="pause-menu">
+                <img src="content/Logo.png" alt="">
+                <p class="lost">YOU LOST</p>
+                <p class="wait">WAIT FOR PLAYER 2</p>
+                <p class="left">PLAYER 2 LEFT THE GAME</p>
+                <p class="win">PLAYER 2 LOST</p>
+                <p class="continue" onclick="pauseGame()">CONTINUE</p>
+                <p class="restart" onclick="restart()">RESTART</p>
+                <p class="quit" onclick="backToMenu()">QUIT</p>
+            </div>
+        </div>
+        <img class="imgref" src="content/Brick.png" alt="" id="brick">
+        <img class="imgref" src="content/Brick2.png" alt="" id="brick2">
+        <img class="imgref" src="content/Brick-white.png" alt="" id="brick-white">
+        <img class="imgref" src="content/Brick-white2.png" alt="" id="brick-white2">
+        <img class="imgref" src="content/Player1.png" alt="" id="ball">
+        <img class="imgref" src="content/Player2.png" alt="" id="ball2">
+
+        <audio src="content/menu.mp3" autoplay loop></audio>
+        <audio src="content/play.mp3" autoplay loop></audio>
+        <canvas id="canvas"></canvas>
+    </div>
+</div>
+</body>
+</html>
