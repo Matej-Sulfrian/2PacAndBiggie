@@ -15,7 +15,12 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b17368c-3bea-41ea-a8ca-d4ad6a2150ef" name="Default Changelist" comment="commit" />
+    <list default="true" id="6b17368c-3bea-41ea-a8ca-d4ad6a2150ef" name="Default Changelist" comment="commit">
+      <change afterPath="$PROJECT_DIR$/inderfaceDesign.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface_design/inderfaceDesign.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface_design/indertfaceDesign.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,6 +44,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -100,6 +106,8 @@
       <workItem from="1625351588704" duration="47000" />
       <workItem from="1625501402206" duration="351000" />
       <workItem from="1625562859194" duration="18000" />
+      <workItem from="1626099656048" duration="67000" />
+      <workItem from="1638299729657" duration="4230000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1621531880517</created>
@@ -402,7 +410,21 @@
       <option name="project" value="LOCAL" />
       <updated>1625351608422</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="JazzJumper v1.0 Beta (for PC)">
+      <created>1625853095866</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1625853095866</updated>
+    </task>
+    <task id="LOCAL-00045" summary="JazzJumper v1.0 Beta (for PC)">
+      <created>1625853119256</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1625853119256</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -427,7 +449,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="landing page menu" />
     <MESSAGE value="landing page img prev" />
     <MESSAGE value="landing page menu typo" />
     <MESSAGE value="landing page css fix" />
@@ -452,26 +473,13 @@
     <MESSAGE value="E-Learning youtube playlist typo" />
     <MESSAGE value="E-Learning links final" />
     <MESSAGE value="E-Leraning typo" />
-    <option name="LAST_COMMIT_MESSAGE" value="E-Leraning typo" />
+    <MESSAGE value="JazzJumper v1.0 Beta (for PC)" />
+    <option name="LAST_COMMIT_MESSAGE" value="JazzJumper v1.0 Beta (for PC)" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1272" y="533" key="#PHP" timestamp="1624311172914">
+    <state x="1109" y="522" key="SettingsEditor" timestamp="1638300470523">
       <screen x="0" y="25" width="3200" height="1722" />
     </state>
-    <state x="1272" y="533" key="#PHP/3200.625.1920.1175/0.25.3200.1722@0.25.3200.1722" timestamp="1624311172914" />
-    <state x="629" y="362" key="Vcs.Push.Dialog.v2" timestamp="1625351610650">
-      <screen x="0" y="25" width="1680" height="972" />
-    </state>
-    <state x="629" y="362" key="Vcs.Push.Dialog.v2/0.25.1680.972@0.25.1680.972" timestamp="1625351610650" />
-    <state x="719" y="372" key="Vcs.Push.Dialog.v2/0.25.1920.1002/1920.25.1680.1025@0.25.1920.1002" timestamp="1624643291657" />
-    <state x="1198" y="622" key="Vcs.Push.Dialog.v2/3200.625.1920.1175/0.25.3200.1722@0.25.3200.1722" timestamp="1625083623083" />
-    <state x="625" y="241" key="run.anything.popup" timestamp="1624013884609">
-      <screen x="0" y="25" width="1920" height="1002" />
-    </state>
-    <state x="625" y="241" key="run.anything.popup/0.25.1920.1002/1920.25.1680.1025@0.25.1920.1002" timestamp="1624013884609" />
-    <state x="505" y="239" width="670" height="676" key="search.everywhere.popup" timestamp="1624895969838">
-      <screen x="0" y="25" width="1680" height="972" />
-    </state>
-    <state x="505" y="239" width="670" height="676" key="search.everywhere.popup/0.25.1680.972@0.25.1680.972" timestamp="1624895969838" />
+    <state x="1109" y="522" key="SettingsEditor/0.25.3200.1722/-1920.625.1920.1175@0.25.3200.1722" timestamp="1638300470523" />
   </component>
 </project>
