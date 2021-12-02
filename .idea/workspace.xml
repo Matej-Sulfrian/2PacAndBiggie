@@ -15,10 +15,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b17368c-3bea-41ea-a8ca-d4ad6a2150ef" name="Default Changelist" comment="commit">
-      <change beforePath="$PROJECT_DIR$/.gitignor" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="6b17368c-3bea-41ea-a8ca-d4ad6a2150ef" name="Default Changelist" comment="commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -106,7 +103,7 @@
       <workItem from="1625562859194" duration="18000" />
       <workItem from="1626099656048" duration="67000" />
       <workItem from="1638299729657" duration="5304000" />
-      <workItem from="1638321927135" duration="4000" />
+      <workItem from="1638321927135" duration="235000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1621531880517</created>
@@ -444,7 +441,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638321684108</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="gitignor">
+      <created>1638321953534</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1638321953534</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -469,7 +473,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="landing page menu typo" />
     <MESSAGE value="landing page css fix" />
     <MESSAGE value="part safe" />
     <MESSAGE value="missing file" />
@@ -494,21 +497,34 @@
     <MESSAGE value="E-Leraning typo" />
     <MESSAGE value="JazzJumper v1.0 Beta (for PC)" />
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="gitignor" />
+    <option name="LAST_COMMIT_MESSAGE" value="gitignor" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1326" y="692" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1638321351513">
       <screen x="0" y="25" width="3200" height="1722" />
     </state>
     <state x="1326" y="692" key="#com.intellij.fileTypes.FileTypeChooser/0.25.3200.1722/-1920.625.1920.1175@0.25.3200.1722" timestamp="1638321351513" />
+    <state x="320" y="183" key="MergeDialog" timestamp="1638322010267">
+      <screen x="0" y="25" width="3200" height="1722" />
+    </state>
+    <state x="320" y="183" key="MergeDialog/0.25.3200.1722/-1920.625.1920.1175@0.25.3200.1722" timestamp="1638322010267" />
+    <state x="1238" y="651" key="MultipleFileMergeDialog" timestamp="1638322010333">
+      <screen x="0" y="25" width="3200" height="1722" />
+    </state>
+    <state x="1238" y="651" key="MultipleFileMergeDialog/0.25.3200.1722/-1920.625.1920.1175@0.25.3200.1722" timestamp="1638322010333" />
     <state x="1109" y="522" key="SettingsEditor" timestamp="1638300470523">
       <screen x="0" y="25" width="3200" height="1722" />
     </state>
     <state x="1109" y="522" key="SettingsEditor/0.25.3200.1722/-1920.625.1920.1175@0.25.3200.1722" timestamp="1638300470523" />
-    <state x="1200" y="605" key="Vcs.Push.Dialog.v2" timestamp="1638321686346">
+    <state x="1200" y="605" key="Vcs.Push.Dialog.v2" timestamp="1638321955500">
       <screen x="0" y="25" width="3200" height="1722" />
     </state>
-    <state x="1200" y="605" key="Vcs.Push.Dialog.v2/0.25.3200.1722/-1920.625.1920.1175@0.25.3200.1722" timestamp="1638321686346" />
+    <state x="1200" y="605" key="Vcs.Push.Dialog.v2/0.25.3200.1722/-1920.625.1920.1175@0.25.3200.1722" timestamp="1638321955500" />
     <state x="1200" y="623" key="Vcs.Push.Dialog.v2/0.25.3200.1775/-1920.625.1920.1122@0.25.3200.1775" timestamp="1638320775282" />
+    <state x="100" y="125" width="3000" height="1522" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1638322161521">
+      <screen x="0" y="25" width="3200" height="1722" />
+    </state>
+    <state x="100" y="125" width="3000" height="1522" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.25.3200.1722/-1920.625.1920.1175@0.25.3200.1722" timestamp="1638322161521" />
   </component>
 </project>
