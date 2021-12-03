@@ -18,8 +18,7 @@
     <list default="true" id="6b17368c-3bea-41ea-a8ca-d4ad6a2150ef" name="Default Changelist" comment="commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interfaceDesign.html" beforeDir="false" afterPath="$PROJECT_DIR$/interfaceDesign.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface_design/inderfaceDesign.css" beforeDir="false" afterPath="$PROJECT_DIR$/interface_design/interfaceDesign.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface_design/indertfaceDesign.js" beforeDir="false" afterPath="$PROJECT_DIR$/interface_design/interfaceDesign.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface_design/interfaceDesign.css" beforeDir="false" afterPath="$PROJECT_DIR$/interface_design/interfaceDesign.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,14 +108,7 @@
       <workItem from="1626099656048" duration="67000" />
       <workItem from="1638299729657" duration="5304000" />
       <workItem from="1638321927135" duration="235000" />
-      <workItem from="1638462653598" duration="774000" />
-    </task>
-    <task id="LOCAL-00002" summary="First commit">
-      <created>1621537076826</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1621537076826</updated>
+      <workItem from="1638462653598" duration="7212000" />
     </task>
     <task id="LOCAL-00003" summary="First commit">
       <created>1621537279508</created>
@@ -454,7 +446,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638462807265</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="rename">
+      <created>1638463771628</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1638463771628</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -523,10 +522,10 @@
       <screen x="0" y="25" width="3200" height="1722" />
     </state>
     <state x="1109" y="522" key="SettingsEditor/0.25.3200.1722/-1920.625.1920.1175@0.25.3200.1722" timestamp="1638300470523" />
-    <state x="1200" y="605" key="Vcs.Push.Dialog.v2" timestamp="1638462810466">
+    <state x="1200" y="605" key="Vcs.Push.Dialog.v2" timestamp="1638463776977">
       <screen x="0" y="25" width="3200" height="1722" />
     </state>
-    <state x="1200" y="605" key="Vcs.Push.Dialog.v2/0.25.3200.1722/-1920.625.1920.1175@0.25.3200.1722" timestamp="1638462810466" />
+    <state x="1200" y="605" key="Vcs.Push.Dialog.v2/0.25.3200.1722/-1920.625.1920.1175@0.25.3200.1722" timestamp="1638463776977" />
     <state x="1200" y="623" key="Vcs.Push.Dialog.v2/0.25.3200.1775/-1920.625.1920.1122@0.25.3200.1775" timestamp="1638320775282" />
     <state x="100" y="125" width="3000" height="1522" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1638322161521">
       <screen x="0" y="25" width="3200" height="1722" />

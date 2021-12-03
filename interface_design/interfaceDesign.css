@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+
 html, body {
     margin: 0;
     padding: 0;
@@ -7,6 +9,8 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 20px;
 }
 
 .herd {
@@ -34,6 +38,8 @@ html, body {
 
 .interface_w {
     height: 20%;
+    display: flex;
+    flex-direction: column;
 }
 
 .cook {
@@ -45,4 +51,71 @@ html, body {
 
 .interface_w .logo {
     width: 20%;
+}
+
+.touch_w {
+    display: flex;
+    margin-right: 40px;
+    margin-top: 5px;
+}
+
+.touch_herd {
+    outline: 1px solid white;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    color: white;
+    margin: 5px;
+}
+
+.touch_w .mid {
+    display: flex;
+    flex-direction: column;
+}
+
+.touch_w .mid .top, .touch_w .mid .bottom {
+    display: flex;
+}
+
+.touch_w .mid img {
+    width: 10px;
+}
+
+.touch_w .left, .touch_w .right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.touch_w .left img {
+    width: 44px;
+}
+
+.touch_w .right img {
+    height: 90%;
+    margin: 5px;
+    margin-left: 10px;
+    z-index: 1;
+
+}
+
+.touch_w .right .bg {
+    /*background: linear-gradient(0deg, rgba(251,203,205,1) 0%, rgba(237,28,36,1) 100%);*/
+    background: linear-gradient(0deg, rgba(69,8,10,1) 0%, rgba(237,28,36,1) 100%);
+    position: absolute;
+    bottom: 6px;
+    height: 90%;
+    width: 70%;
+    margin-left: 4px;
+    overflow: hidden;
+}
+
+.touch_w .right .bg_cover {
+    background-color: #111111;
+    width: 100%;
+    height: 87.5%;
 }
