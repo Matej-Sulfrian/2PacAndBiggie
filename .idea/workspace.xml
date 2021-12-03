@@ -108,14 +108,7 @@
       <workItem from="1626099656048" duration="67000" />
       <workItem from="1638299729657" duration="5304000" />
       <workItem from="1638321927135" duration="235000" />
-      <workItem from="1638462653598" duration="7212000" />
-    </task>
-    <task id="LOCAL-00003" summary="First commit">
-      <created>1621537279508</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1621537279508</updated>
+      <workItem from="1638462653598" duration="7418000" />
     </task>
     <task id="LOCAL-00004" summary="commit">
       <created>1621537756950</created>
@@ -453,7 +446,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638463771628</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="dday work">
+      <created>1638492525468</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1638492525469</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -478,7 +478,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="part safe" />
     <MESSAGE value="missing file" />
     <MESSAGE value="First E-Learning" />
     <MESSAGE value="E-Learning fix" />
@@ -503,7 +502,8 @@
     <MESSAGE value="first commit" />
     <MESSAGE value="gitignor" />
     <MESSAGE value="rename" />
-    <option name="LAST_COMMIT_MESSAGE" value="rename" />
+    <MESSAGE value="dday work" />
+    <option name="LAST_COMMIT_MESSAGE" value="dday work" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1326" y="692" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1638321351513">
@@ -522,11 +522,11 @@
       <screen x="0" y="25" width="3200" height="1722" />
     </state>
     <state x="1109" y="522" key="SettingsEditor/0.25.3200.1722/-1920.625.1920.1175@0.25.3200.1722" timestamp="1638300470523" />
-    <state x="1200" y="605" key="Vcs.Push.Dialog.v2" timestamp="1638463776977">
-      <screen x="0" y="25" width="3200" height="1722" />
+    <state x="1200" y="623" key="Vcs.Push.Dialog.v2" timestamp="1638492527678">
+      <screen x="0" y="25" width="3200" height="1775" />
     </state>
     <state x="1200" y="605" key="Vcs.Push.Dialog.v2/0.25.3200.1722/-1920.625.1920.1175@0.25.3200.1722" timestamp="1638463776977" />
-    <state x="1200" y="623" key="Vcs.Push.Dialog.v2/0.25.3200.1775/-1920.625.1920.1122@0.25.3200.1775" timestamp="1638320775282" />
+    <state x="1200" y="623" key="Vcs.Push.Dialog.v2/0.25.3200.1775/-1920.625.1920.1122@0.25.3200.1775" timestamp="1638492527678" />
     <state x="100" y="125" width="3000" height="1522" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1638322161521">
       <screen x="0" y="25" width="3200" height="1722" />
     </state>
