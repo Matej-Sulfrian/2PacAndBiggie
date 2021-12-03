@@ -18,8 +18,7 @@
     <list default="true" id="6b17368c-3bea-41ea-a8ca-d4ad6a2150ef" name="Default Changelist" comment="commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interfaceDesign.html" beforeDir="false" afterPath="$PROJECT_DIR$/interfaceDesign.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface_design/inderfaceDesign.css" beforeDir="false" afterPath="$PROJECT_DIR$/interface_design/interfaceDesign.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface_design/indertfaceDesign.js" beforeDir="false" afterPath="$PROJECT_DIR$/interface_design/interfaceDesign.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface_design/interfaceDesign.css" beforeDir="false" afterPath="$PROJECT_DIR$/interface_design/interfaceDesign.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
