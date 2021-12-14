@@ -16,7 +16,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b17368c-3bea-41ea-a8ca-d4ad6a2150ef" name="Default Changelist" comment="commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interfaceDesign.html" beforeDir="false" afterPath="$PROJECT_DIR$/interfaceDesign.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface_design/interfaceDesign.css" beforeDir="false" afterPath="$PROJECT_DIR$/interface_design/interfaceDesign.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface_design/interfaceDesign.js" beforeDir="false" afterPath="$PROJECT_DIR$/interface_design/interfaceDesign.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,20 +110,7 @@
       <workItem from="1638299729657" duration="5304000" />
       <workItem from="1638321927135" duration="235000" />
       <workItem from="1638462653598" duration="774000" />
-    </task>
-    <task id="LOCAL-00003" summary="First commit">
-      <created>1621537279508</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1621537279508</updated>
-    </task>
-    <task id="LOCAL-00004" summary="commit">
-      <created>1621537756950</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1621537756950</updated>
+      <workItem from="1639491391556" duration="11820000" />
     </task>
     <task id="LOCAL-00005" summary="commit">
       <created>1621542733660</created>
@@ -451,7 +441,21 @@
       <option name="project" value="LOCAL" />
       <updated>1638492633997</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="dday work">
+      <created>1638492654448</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1638492654449</updated>
+    </task>
+    <task id="LOCAL-00053" summary="dday work">
+      <created>1638492801536</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1638492801537</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -520,14 +524,18 @@
       <screen x="0" y="25" width="3200" height="1722" />
     </state>
     <state x="1109" y="522" key="SettingsEditor/0.25.3200.1722/-1920.625.1920.1175@0.25.3200.1722" timestamp="1638300470523" />
-    <state x="1200" y="605" key="Vcs.Push.Dialog.v2" timestamp="1638492641621">
+    <state x="1200" y="605" key="Vcs.Push.Dialog.v2" timestamp="1638492803581">
       <screen x="0" y="25" width="3200" height="1722" />
     </state>
-    <state x="1200" y="605" key="Vcs.Push.Dialog.v2/0.25.3200.1722/-1920.625.1920.1175@0.25.3200.1722" timestamp="1638492641621" />
+    <state x="1200" y="605" key="Vcs.Push.Dialog.v2/0.25.3200.1722/-1920.625.1920.1175@0.25.3200.1722" timestamp="1638492803581" />
     <state x="1200" y="623" key="Vcs.Push.Dialog.v2/0.25.3200.1775/-1920.625.1920.1122@0.25.3200.1775" timestamp="1638320775282" />
     <state x="100" y="125" width="3000" height="1522" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1638322161521">
       <screen x="0" y="25" width="3200" height="1722" />
     </state>
     <state x="100" y="125" width="3000" height="1522" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.25.3200.1722/-1920.625.1920.1175@0.25.3200.1722" timestamp="1638322161521" />
+    <state x="1301" y="612" width="597" height="548" key="find.popup" timestamp="1639498395618">
+      <screen x="0" y="25" width="3200" height="1722" />
+    </state>
+    <state x="1301" y="612" width="597" height="548" key="find.popup/0.25.3200.1722/-1920.625.1920.1175@0.25.3200.1722" timestamp="1639498395618" />
   </component>
 </project>

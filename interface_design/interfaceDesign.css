@@ -49,14 +49,39 @@ html, body {
     border-radius: 10px;
 }
 
+.cook .top, .cook .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+}
+
+.cook .plate {
+    display: block;
+    outline: 1px solid white;
+    width: 250px;
+    height: 250px;
+    border-radius: 125px;
+}
+
+.cook img {
+    width: 10%;
+}
+
 .interface_w .logo {
     width: 20%;
 }
 
 .touch_w {
     display: flex;
-    margin-right: 40px;
+    margin-right: 0;
     margin-top: 5px;
+    transition: all 0.2s;
+}
+
+.touch_w.show {
+    margin-right: 40px;
+    transition: all 0.2s;
 }
 
 .touch_herd {
@@ -91,6 +116,19 @@ html, body {
     position: relative;
 }
 
+.touch_w .showHideW {
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.2s, opacity 0.4s;
+}
+
+.touch_w .showHideW.show {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s, opacity 0.4s;
+}
+
 .touch_w .left img {
     width: 44px;
 }
@@ -119,3 +157,4 @@ html, body {
     width: 100%;
     height: 87.5%;
 }
+
