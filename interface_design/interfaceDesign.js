@@ -1,9 +1,9 @@
 let plates,
-    mid
+    mid,
+    swiper
 
 $('html').ready(function () {
     $('.showHideW').css('display', 'none')
-    console.log('load')
 
     plates = [
         {
@@ -43,7 +43,93 @@ $('html').ready(function () {
         }
     ]
 
+    swiper = {
+        img: $('.touch_w .right img'),
+        cover: $('.touch_w .right .bg_cover')
+    }
+
+    $(swiper.img).mousedown(function (e) {
+        let height = e.pageY - $(this).offset().left
+        let pz = Math.floor(((height + (swiper.img.height() / 2)) / swiper.img.height()) * 100)
+
+
+        let swipe = false
+        for (let plate of plates) {
+            if (plate.touchPlate.hasClass('active')) {
+                swipe = true
+            }
+        }
+
+        if (swipe) {
+            setSwipe(pz)
+        }
+
+    })
+
 })
+
+function setSwipe(pz, set = true) {
+    if (pz <= 12.5) {
+        swiper.cover.css('height', '0%')
+        if (set) {
+            setHeat(8)
+        }
+    } else if (pz <= 25) {
+        swiper.cover.css('height', '12.5%')
+        if (set) {
+            setHeat(7)
+        }
+    } else if (pz <= 37.5) {
+        swiper.cover.css('height', '25%')
+        if (set) {
+            setHeat(6)
+        }
+    } else if (pz <= 50) {
+        swiper.cover.css('height', '37.5%')
+        if (set) {
+            setHeat(5)
+        }
+    } else if (pz <= 62.5) {
+        swiper.cover.css('height', '50%')
+        if (set) {
+            setHeat(4)
+        }
+    } else if (pz <= 75) {
+        swiper.cover.css('height', '62.5%')
+        if (set) {
+            setHeat(3)
+        }
+    } else if (pz <= 87.5) {
+        swiper.cover.css('height', '75%')
+        if (set) {
+            setHeat(2)
+        }
+    } else if (pz <= 95) {
+        swiper.cover.css('height', '87.5%')
+        if (set) {
+            setHeat(1)
+        }
+    } else if (pz <= 100) {
+        swiper.cover.css('height', '100%')
+        if (set) {
+            setHeat(0)
+        }
+    }
+}
+
+function setHeat(heat) {
+    for (let plate of plates) {
+        if (plate.touchPlate.hasClass('active')) {
+            plate.touchPlate.html(heat)
+            if (heat > 0) {
+                plate.touchPlate.css('color', '#E52629')
+            } else {
+                plate.touchPlate.css('color', 'white')
+            }
+        }
+    }
+    switchCook()
+}
 
 function onOff() {
 
@@ -70,11 +156,23 @@ function onOff() {
                 touch_w.removeClass('show')
             })
         }, 300)
-
+        swiper.cover.css('height', '100%')
+        for (let plat of plates) {
+            plat.touchPlate.removeClass('active')
+            plat.touchPlate.html('0')
+            plat.touchPlate.css('color', 'white')
+            plat.plate.removeClass('active')
+            plat.midActive = false
+        }
+        for (let mi of mid) {
+            mi.el.attr('src', 'interface_design/mid_sec.svg')
+            mi.active = false
+        }
     }
 }
 
-function switchPlate(plateI) {
+function switchPlates(plateI) {
+
     for (let i = 0; i < plates.length; i++) {
         if (i !== plateI) {
             plates[i].touchPlate.removeClass('active')
@@ -104,6 +202,17 @@ function switchPlate(plateI) {
             plates[plateI].touchPlate.addClass('active')
         }
     }
+
+    let tempNumb = 100 - ((plates[plateI].touchPlate.html() - 1) * 12.5)
+    if (tempNumb > 100) {
+        tempNumb = 100
+    } else if (tempNumb === 100) {
+        tempNumb = 90
+    }
+
+    console.log(tempNumb)
+    setSwipe(tempNumb, false)
+
 }
 
 function switchMid(midI) {
@@ -119,17 +228,30 @@ function switchMid(midI) {
         mid[midI].active = true
 
         for (let plate of plates) {
+            if (!plate.touchPlate.hasClass('active'))
             plate.touchPlate.removeClass('active')
         }
-
+        let heat = 0
         for (let i = 0 + x; i < 2 + x; i++) {
             let plate = plates[i].touchPlate
             plates[i].midActive = true
             if (!plate.hasClass('active')) {
                 plate.addClass('active')
             }
-        }
+            if (plate.html() > heat) {
+                heat = plate.html()
+            }
 
+        }
+        for (let i = 0 + x; i < 2 + x; i++) {
+            let plate = plates[i].touchPlate
+            plate.html(heat)
+            if (parseInt(heat) > 0) {
+                plate.css('color', '#E52629')
+            } else {
+                plate.css('color', 'white')
+            }
+        }
     } else {
         mid[midI].el.attr('src', 'interface_design/mid_sec.svg')
         mid[midI].active = false
@@ -138,6 +260,18 @@ function switchMid(midI) {
             let plate = plates[i].touchPlate
             plates[i].midActive = false
             plate.removeClass('active')
+        }
+    }
+
+    switchCook()
+}
+
+function switchCook() {
+    for (let plate of plates) {
+        if (plate.touchPlate.html() > 0) {
+            plate.plate.addClass('active')
+        } else {
+            plate.plate.removeClass('active')
         }
     }
 }
