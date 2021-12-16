@@ -209,8 +209,6 @@ function switchPlates(plateI) {
     } else if (tempNumb === 100) {
         tempNumb = 90
     }
-
-    console.log(tempNumb)
     setSwipe(tempNumb, false)
 
 }
@@ -228,7 +226,6 @@ function switchMid(midI) {
         mid[midI].active = true
 
         for (let plate of plates) {
-            if (!plate.touchPlate.hasClass('active'))
             plate.touchPlate.removeClass('active')
         }
         let heat = 0
@@ -252,6 +249,13 @@ function switchMid(midI) {
                 plate.css('color', 'white')
             }
         }
+        let tempNumb = 100 - ((heat - 1) * 12.5)
+        if (tempNumb > 100) {
+            tempNumb = 100
+        } else if (tempNumb === 100) {
+            tempNumb = 90
+        }
+        setSwipe(tempNumb, false)
     } else {
         mid[midI].el.attr('src', 'interface_design/mid_sec.svg')
         mid[midI].active = false
