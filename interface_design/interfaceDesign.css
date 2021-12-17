@@ -192,8 +192,8 @@ html, body {
 
 .clock {
     position: absolute;
-    bottom: 65px;
-    right: 190px;
+    bottom: 70px;
+    right: 180px;
     font-family: Scorboard;
     color: white;
     opacity: 0;
@@ -202,5 +202,30 @@ html, body {
 }
 
 .clock.active {
+    opacity: 1;
+}
+
+.player {
+    position: absolute;
+    bottom: 90px;
+    left: 180px;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    outline: 1px solid white;
+    opacity: 0;
+    transition: all 0.8s;
+}
+
+.player iframe {
+    transform: translate(-5px, -10px);
+}
+
+.dark .widget-header, .dark .widget-tracklist-container, .dark .widget-tracklist-row {
+    background-color: #111111; !important;
+}
+
+.player.active {
     opacity: 1;
 }
