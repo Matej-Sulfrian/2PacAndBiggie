@@ -49,9 +49,9 @@ $('html').ready(function () {
     }
 
     $(swiper.img).mousedown(function (e) {
-        let height = e.pageY - $(this).offset().left
-        let pz = Math.floor(((height + (swiper.img.height() / 2)) / swiper.img.height()) * 100)
+        let height = e.pageY - $(swiper.img).offset().top
 
+        let pz = Math.floor(((height) / swiper.img.height()) * 100)
 
         let swipe = false
         for (let plate of plates) {
@@ -203,12 +203,27 @@ function switchPlates(plateI) {
         }
     }
 
+    console.log(plates[plateI].touchPlate.html())
+
     let tempNumb = 100 - ((plates[plateI].touchPlate.html() - 1) * 12.5)
     if (tempNumb > 100) {
         tempNumb = 100
     } else if (tempNumb === 100) {
         tempNumb = 90
     }
+
+    let noneActive = true
+    for (let plate of plates) {
+        if (plate.touchPlate.hasClass('active')) {
+            noneActive = false
+        }
+    }
+
+    if (noneActive) {
+        tempNumb = 100
+    }
+
+    console.log(tempNumb)
     setSwipe(tempNumb, false)
 
 }
