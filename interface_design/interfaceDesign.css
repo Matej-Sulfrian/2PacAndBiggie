@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
 
+@font-face {
+    font-family: Scorboard;
+    src: url(NewXDigitalLighttfb.woff);
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -15,6 +20,7 @@ html, body {
 
 .herd {
     display: flex;
+    position: relative;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -184,3 +190,17 @@ html, body {
     margin-left: 10px;
 }
 
+.clock {
+    position: absolute;
+    bottom: 65px;
+    right: 190px;
+    font-family: Scorboard;
+    color: white;
+    opacity: 0;
+    transition: all 0.8s;
+    font-size: 18px;
+}
+
+.clock.active {
+    opacity: 1;
+}

@@ -17,6 +17,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6b17368c-3bea-41ea-a8ca-d4ad6a2150ef" name="Default Changelist" comment="commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interfaceDesign.html" beforeDir="false" afterPath="$PROJECT_DIR$/interfaceDesign.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface_design/interfaceDesign.css" beforeDir="false" afterPath="$PROJECT_DIR$/interface_design/interfaceDesign.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interface_design/interfaceDesign.js" beforeDir="false" afterPath="$PROJECT_DIR$/interface_design/interfaceDesign.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -110,14 +112,7 @@
       <workItem from="1638462653598" duration="774000" />
       <workItem from="1639491391556" duration="12378000" />
       <workItem from="1639661740615" duration="21854000" />
-      <workItem from="1639747152370" duration="1137000" />
-    </task>
-    <task id="LOCAL-00009" summary="second try level creation">
-      <created>1623336365250</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1623336365250</updated>
+      <workItem from="1639747152370" duration="3142000" />
     </task>
     <task id="LOCAL-00010" summary="3. try level creation">
       <created>1623344483601</created>
@@ -455,7 +450,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639687513836</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="bug fix">
+      <created>1639749494527</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1639749494527</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -480,7 +482,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="E-Learning fix 1.2 (schnackeklatsche)" />
     <MESSAGE value="E-Learning fix 1.3" />
     <MESSAGE value="E-Learning quiz 1.0" />
     <MESSAGE value="E-Learning quiz 1.0 (420)" />
@@ -505,7 +506,8 @@
     <MESSAGE value="active plate logic" />
     <MESSAGE value="final first without sound" />
     <MESSAGE value="final sec without sound" />
-    <option name="LAST_COMMIT_MESSAGE" value="final sec without sound" />
+    <MESSAGE value="bug fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug fix" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1326" y="692" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1638321351513">
@@ -524,10 +526,10 @@
       <screen x="0" y="25" width="3200" height="1722" />
     </state>
     <state x="1109" y="522" key="SettingsEditor/0.25.3200.1722/-1920.625.1920.1175@0.25.3200.1722" timestamp="1638300470523" />
-    <state x="1200" y="605" key="Vcs.Push.Dialog.v2" timestamp="1639687515647">
+    <state x="1200" y="605" key="Vcs.Push.Dialog.v2" timestamp="1639749497473">
       <screen x="0" y="25" width="3200" height="1722" />
     </state>
-    <state x="1200" y="605" key="Vcs.Push.Dialog.v2/0.25.3200.1722/-1920.625.1920.1175@0.25.3200.1722" timestamp="1639687515647" />
+    <state x="1200" y="605" key="Vcs.Push.Dialog.v2/0.25.3200.1722/-1920.625.1920.1175@0.25.3200.1722" timestamp="1639749497473" />
     <state x="1200" y="623" key="Vcs.Push.Dialog.v2/0.25.3200.1775/-1920.625.1920.1122@0.25.3200.1775" timestamp="1638320775282" />
     <state x="100" y="125" width="3000" height="1522" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1638322161521">
       <screen x="0" y="25" width="3200" height="1722" />

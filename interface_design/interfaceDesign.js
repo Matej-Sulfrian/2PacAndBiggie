@@ -145,7 +145,9 @@ function onOff() {
             touch_w.addClass('show')
             showHideW.addClass('show')
             onOffButton.attr('src', 'interface_design/on_off_red.svg')
+            $('.clock').addClass('active')
         })
+
 
     } else if (onOffButtonState === 'on') {
         onOffButton.attr('state', 'off')
@@ -168,6 +170,7 @@ function onOff() {
             mi.el.attr('src', 'interface_design/mid_sec.svg')
             mi.active = false
         }
+        $('.clock').removeClass('active')
     }
 }
 
@@ -294,4 +297,9 @@ function switchCook() {
         }
     }
 }
+
+setInterval(() => {
+    let now = new Date()
+    $('.clock p').html(now.getHours() + ':' + now.getMinutes())
+},1000)
 
