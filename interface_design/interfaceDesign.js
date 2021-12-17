@@ -2,6 +2,13 @@ let plates,
     mid,
     swiper
 
+let onSound = new Audio('interface_design/trueOn.mp3')
+let offSound = new Audio('interface_design/off.mp3')
+let clickSound = new Audio('interface_design/click.wav')
+let selectSound = new Audio('interface_design/select.wav')
+let deselectSound = new Audio('interface_design/deselect.wav')
+let myIframe = '<iframe width="200px" height="120" src="https://www.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2Fjulian-schwierz%2Fschwierzischwierz-strictly-vinyl%2F" frameborder="0" ></iframe>'
+
 $('html').ready(function () {
     $('.showHideW').css('display', 'none')
 
@@ -140,22 +147,27 @@ function onOff() {
     let touch_w = $('.touch_w')
 
     if (onOffButtonState === 'off') {
+        onSound.play()
+        $('.player').html(myIframe)
         onOffButton.attr('state', 'on')
         showHideW.show(300, 'linear', function () {
             touch_w.addClass('show')
             showHideW.addClass('show')
-            onOffButton.attr('src', 'interface_design/on_off_red.svg')
+            // onOffButton.attr('src', 'interface_design/on_off_red.svg')
             $('.clock').addClass('active')
+            $('.player').addClass('active')
         })
 
 
     } else if (onOffButtonState === 'on') {
+        offSound.play()
         onOffButton.attr('state', 'off')
         showHideW.removeClass('show')
-        onOffButton.attr('src', 'interface_design/on_off.svg')
+        // onOffButton.attr('src', 'interface_design/on_off.svg')
         setTimeout(() => {
             showHideW.hide(300, 'linear', function () {
                 touch_w.removeClass('show')
+                $('.player').html('')
             })
         }, 300)
         swiper.cover.css('height', '100%')
@@ -171,6 +183,8 @@ function onOff() {
             mi.active = false
         }
         $('.clock').removeClass('active')
+        $('.player').removeClass('active')
+
     }
 }
 
@@ -197,12 +211,14 @@ function switchPlates(plateI) {
             for (let i = 0 + x; i < 2 + x; i++) {
                 plates[i].touchPlate.addClass('active')
             }
+            clickSound.play()
         }
     } else {
         if (plates[plateI].touchPlate.hasClass('active')) {
             plates[plateI].touchPlate.removeClass('active')
         } else {
             plates[plateI].touchPlate.addClass('active')
+            clickSound.play()
         }
     }
 
@@ -243,6 +259,8 @@ function switchMid(midI) {
         mid[midI].el.attr('src', 'interface_design/mid_sec_red.svg')
         mid[midI].active = true
 
+        selectSound.play()
+
         for (let plate of plates) {
             plate.touchPlate.removeClass('active')
         }
@@ -277,6 +295,10 @@ function switchMid(midI) {
     } else {
         mid[midI].el.attr('src', 'interface_design/mid_sec.svg')
         mid[midI].active = false
+
+        deselectSound.play()
+
+        setSwipe(100, false)
 
         for (let i = 0 + x; i < 2 + x; i++) {
             let plate = plates[i].touchPlate
