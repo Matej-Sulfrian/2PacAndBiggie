@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang=de>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="interface_design/simplexApp.css">
+    <link rel="shortcut icon" href="interface_design/logo_white.svg">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="interface_design/simplexApp.js"></script>
+    <title>Simplex App Interface Design Matej Sulfrian</title>
+</head>
+<body>
+<div class="herd">
+    <div class="top_sec">
+        <div class="line left"></div>
+        <img src="interface_design/logo_white.svg" alt="SIMPLEX" class="logo">
+        <div class="line right"></div>
+    </div>
+    <div class="interface_w">
+
+        <div class="touch_w">
+            <div class="left">
+                <img src="interface_design/on_off.svg" alt="" state="off" onclick="onOff()">
+            </div>
+            <div class="showHideW">
+                <div class="mid">
+                    <div class="top">
+                        <div class="touch_herd" data="0" onclick="switchPlates(0)">0</div>
+                        <img src="interface_design/mid_sec.svg" alt="" onclick="switchMid(0)">
+                        <div class="touch_herd" data="1" onclick="switchPlates(1)">0</div>
+                    </div>
+                    <div class="bottom">
+                        <div class="touch_herd" data="2" onclick="switchPlates(2)">0</div>
+                        <img src="interface_design/mid_sec.svg" alt="" onclick="switchMid(1)">
+                        <div class="touch_herd" data="3" onclick="switchPlates(3)">0</div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="swiper">
+                        <div class="bg">
+                            <div class="bg_cover"></div>
+                        </div>
+                        <img src="interface_design/swiper_border_light.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottom_sec">
+
+    </div>
+</div>
+</body>
+</html>

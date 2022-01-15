@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+
+@font-face {
+    font-family: Scorboard;
+    src: url(NewXDigitalLighttfb.woff);
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #282828;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 20px;
+    overflow: hidden;
+}
+
+.top_sec {
+    background-color: #111111;
+    height: 50%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    content: "";
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.bottom_sec {
+    background-color: #111111;
+    height: 50%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    content: "";
+    transition: all 0.2s;
+}
+
+.top_sec.active, .bottom_sec.active {
+    height: 15%;
+    transition: all 0.2s;
+    align-items: center;
+}
+
+.top_sec.active .logo {
+    margin-bottom: 0;
+    margin-top: 5%;
+}
+
+.line {
+    height: 2px;
+    width: 20%;
+    background-color: white;
+    border-radius: 2px;
+    margin-top: 10px;
+    position: absolute;
+}
+
+.line.left {
+    left: -100%;
+    transition: all 0.2s;
+}
+
+.line.right {
+    right: -100%;
+    transition: all 0.2s;
+}
+
+.top_sec.active .line.left {
+    left: 0;
+    transition: all 0.2s;
+}
+
+.top_sec.active .line.right {
+    right: 0;
+    transition: all 0.2s;
+}
+
+
+
+
+.herd {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 800px;
+    height: 100%;
+    background-color: #111111;
+    border-radius: 10px;
+    padding: 2.5%;
+    transition: all 0.2s;
+}
+
+.herd.active {
+    background-color: #282828;
+    transition: all 0.2s;
+}
+
+.interface_w {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.interface_w {
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.logo {
+    width: 40%;
+    margin-bottom: 10%;
+    transition: all 0.2s;
+}
+
+.touch_w {
+    display: flex;
+    margin-right: 0;
+    margin-top: 5px;
+    transition: all 0.2s;
+}
+
+.touch_w.show {
+    margin-right: 40px;
+    transition: all 0.2s;
+}
+
+.touch_herd {
+    outline: 1px solid white;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    color: white;
+    margin: 5px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.touch_herd.active {
+    outline: 1px solid #E52629;
+    transition: all 0.2s;
+}
+
+.touch_w .mid {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.touch_w .mid .top, .touch_w .mid .bottom {
+    display: flex;
+}
+
+.touch_w .mid img {
+    width: 10px;
+}
+
+.touch_w .left, .touch_w .right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.touch_w .showHideW {
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.2s, opacity 0.4s;
+}
+
+.touch_w .showHideW.show {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s, opacity 0.4s;
+}
+
+.touch_w .left img {
+    width: 44px;
+    cursor: pointer;
+}
+
+.touch_w .right img {
+    height: 100%;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.touch_w .right .bg {
+    /*background: linear-gradient(0deg, rgba(251,203,205,1) 0%, rgba(237,28,36,1) 100%);*/
+    background: linear-gradient(0deg, rgba(69,8,10,1) 0%, rgba(237,28,36,1) 100%);
+    position: absolute;
+    bottom: 6px;
+    height: 90%;
+    width: 80%;
+    margin-left: 1px;
+    overflow: hidden;
+}
+
+.touch_w .right .bg_cover {
+    background-color: #282828;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s;
+    /* steps in 12.5%   */
+}
+
+.swiper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 90%;
+    /* margin: 5px; */
+    margin-left: 10px;
+}

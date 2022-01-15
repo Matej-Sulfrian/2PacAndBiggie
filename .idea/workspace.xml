@@ -16,11 +16,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b17368c-3bea-41ea-a8ca-d4ad6a2150ef" name="Default Changelist" comment="commit">
+      <change afterPath="$PROJECT_DIR$/interface_design/simplexApp.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface_design/simplexApp.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simplexApp.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interfaceDesign.html" beforeDir="false" afterPath="$PROJECT_DIR$/interfaceDesign.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface_design/interfaceDesign.css" beforeDir="false" afterPath="$PROJECT_DIR$/interface_design/interfaceDesign.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface_design/interfaceDesign.js" beforeDir="false" afterPath="$PROJECT_DIR$/interface_design/interfaceDesign.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface_design/on_off_red.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface_design/swiper_border.svg" beforeDir="false" afterPath="$PROJECT_DIR$/interface_design/swiper_border.svg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,16 +50,16 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/landingPage/content" />
+      <recent name="$PROJECT_DIR$/js" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/e-learning/content" />
       <recent name="$PROJECT_DIR$/server" />
       <recent name="$PROJECT_DIR$/landingPage/content" />
       <recent name="$PROJECT_DIR$/landingPage" />
-      <recent name="$PROJECT_DIR$/js" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/landingPage/content" />
-      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/js" />
     </key>
   </component>
@@ -113,21 +113,9 @@
       <workItem from="1638462653598" duration="774000" />
       <workItem from="1639491391556" duration="12378000" />
       <workItem from="1639661740615" duration="21854000" />
-      <workItem from="1639747152370" duration="8293000" />
-    </task>
-    <task id="LOCAL-00011" summary="level creation alpha for iPhone X">
-      <created>1623414999800</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1623414999800</updated>
-    </task>
-    <task id="LOCAL-00012" summary="level creation alpha 1.1 for iPhone X">
-      <created>1623415565860</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1623415565860</updated>
+      <workItem from="1639747152370" duration="9248000" />
+      <workItem from="1640096608572" duration="87000" />
+      <workItem from="1642171139404" duration="6383000" />
     </task>
     <task id="LOCAL-00013" summary="level difficulty adjustment 1.0">
       <created>1623869651233</created>
@@ -458,7 +446,21 @@
       <option name="project" value="LOCAL" />
       <updated>1639752415346</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="bug fix &amp; sounds">
+      <created>1639758954817</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1639758954817</updated>
+    </task>
+    <task id="LOCAL-00061" summary="bug fix &amp; sounds">
+      <created>1639759267223</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1639759267223</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -483,7 +485,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="E-Learning quiz 1.0" />
     <MESSAGE value="E-Learning quiz 1.0 (420)" />
     <MESSAGE value="E-Learning first video" />
     <MESSAGE value="E-Learning quiz 2.0" />
@@ -508,7 +509,8 @@
     <MESSAGE value="final sec without sound" />
     <MESSAGE value="bug fix" />
     <MESSAGE value="bug fix &amp; clock" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug fix &amp; clock" />
+    <MESSAGE value="bug fix &amp; sounds" />
+    <option name="LAST_COMMIT_MESSAGE" value="bug fix &amp; sounds" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1326" y="692" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1638321351513">
@@ -527,10 +529,10 @@
       <screen x="0" y="25" width="3200" height="1722" />
     </state>
     <state x="1109" y="522" key="SettingsEditor/0.25.3200.1722/-1920.625.1920.1175@0.25.3200.1722" timestamp="1638300470523" />
-    <state x="1200" y="605" key="Vcs.Push.Dialog.v2" timestamp="1639752418483">
+    <state x="1200" y="605" key="Vcs.Push.Dialog.v2" timestamp="1639759269430">
       <screen x="0" y="25" width="3200" height="1722" />
     </state>
-    <state x="1200" y="605" key="Vcs.Push.Dialog.v2/0.25.3200.1722/-1920.625.1920.1175@0.25.3200.1722" timestamp="1639752418483" />
+    <state x="1200" y="605" key="Vcs.Push.Dialog.v2/0.25.3200.1722/-1920.625.1920.1175@0.25.3200.1722" timestamp="1639759269430" />
     <state x="1200" y="623" key="Vcs.Push.Dialog.v2/0.25.3200.1775/-1920.625.1920.1122@0.25.3200.1775" timestamp="1638320775282" />
     <state x="100" y="125" width="3000" height="1522" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1638322161521">
       <screen x="0" y="25" width="3200" height="1722" />
