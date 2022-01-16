@@ -50,7 +50,26 @@
     </div>
 
     <div class="timer_w">
-        <div class="top"></div>
+        <div class="top">
+            <div class="left">
+                <div class="touch_herd 1" onclick="showTimer(1)">0</div>
+                <div class="touch_herd 2" onclick="showTimer(2)">0</div>
+            </div>
+            <div class="right">
+                <div class="touch_herd 3" onclick="showTimer(3)">0</div>
+                <div class="touch_herd 4" onclick="showTimer(4)">0</div>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="timer">0</div>
+            <div class="start_button" onclick="showTimerPlates()">
+                START
+            </div>
+        </div>
+    </div>
+
+    <div class="lock_w" onclick="lock()" state="locked">
+        <img src="interface_design/big_lock.png" alt="">
     </div>
 
     <div class="bottom_sec">

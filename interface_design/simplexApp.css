@@ -254,3 +254,56 @@ html, body {
     /* margin: 5px; */
     margin-left: 10px;
 }
+
+.timer_w {
+    display: none;
+    flex-direction: column;
+}
+
+.timer_w .top {
+    display: flex;
+}
+
+.timer_w .top .left, .timer_w .top .right {
+    display: flex;
+    flex-direction: column;
+    margin: 0 5px;
+    margin-top: 5px;
+}
+
+.timer_w .bottom {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.timer_w .bottom .start_button {
+    width: 60px;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid white;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+}
+
+.timer, .lock_w {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    border: 2px solid white;
+    margin-bottom: 50px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 32px;
+}
+
+.lock_w img {
+    width: 40%;
+}
+

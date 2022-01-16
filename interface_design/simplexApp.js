@@ -328,5 +328,37 @@ function toggleTab(el) {
     } else {
         $('.interface_w').hide()
     }
+    if (el === 'clock') {
+        $('.timer_w').show()
+    } else {
+        $('.timer_w').hide()
+    }
+    if (el === 'lock') {
+        $('.lock_w').css('display', 'flex')
+    } else {
+        $('.lock_w').css('display', 'none')
+    }
+}
+
+function showTimer() {
+    $('.timer_w .top').css('display', 'none')
+    $('.timer_w .bottom').css('display', 'flex')
+}
+
+function showTimerPlates() {
+    $('.timer_w .top').css('display', 'flex')
+    $('.timer_w .bottom').css('display', 'none')
+}
+
+function lock() {
+    let state = $('.lock_w').attr('state')
+    console.log(state)
+    if (state === 'locked') {
+        $('.lock_w').attr('state', 'unlocked')
+        $('.lock_w img').attr('src', 'interface_design/big_lock_open.png')
+    } else if (state === 'unlocked') {
+        $('.lock_w').attr('state', 'locked')
+        $('.lock_w img').attr('src', 'interface_design/big_lock.png')
+    }
 }
 
