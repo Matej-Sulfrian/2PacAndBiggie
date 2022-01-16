@@ -16,11 +16,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b17368c-3bea-41ea-a8ca-d4ad6a2150ef" name="Default Changelist" comment="commit">
-      <change afterPath="$PROJECT_DIR$/interface_design/simplexApp.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interface_design/simplexApp.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/simplexApp.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface_design/swiper_border.svg" beforeDir="false" afterPath="$PROJECT_DIR$/interface_design/swiper_border.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface_design/simplexApp.css" beforeDir="false" afterPath="$PROJECT_DIR$/interface_design/simplexApp.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface_design/simplexApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/interface_design/simplexApp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simplexApp.html" beforeDir="false" afterPath="$PROJECT_DIR$/simplexApp.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,14 +114,8 @@
       <workItem from="1639661740615" duration="21854000" />
       <workItem from="1639747152370" duration="9248000" />
       <workItem from="1640096608572" duration="87000" />
-      <workItem from="1642171139404" duration="6383000" />
-    </task>
-    <task id="LOCAL-00013" summary="level difficulty adjustment 1.0">
-      <created>1623869651233</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1623869651233</updated>
+      <workItem from="1642171139404" duration="6548000" />
+      <workItem from="1642362586490" duration="5553000" />
     </task>
     <task id="LOCAL-00014" summary="first commit landing page">
       <created>1623967477437</created>
@@ -460,7 +453,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639759267223</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="first commit">
+      <created>1642262871914</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1642262871915</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -499,7 +499,6 @@
     <MESSAGE value="E-Learning links final" />
     <MESSAGE value="E-Leraning typo" />
     <MESSAGE value="JazzJumper v1.0 Beta (for PC)" />
-    <MESSAGE value="first commit" />
     <MESSAGE value="gitignor" />
     <MESSAGE value="rename" />
     <MESSAGE value="dday work" />
@@ -510,7 +509,8 @@
     <MESSAGE value="bug fix" />
     <MESSAGE value="bug fix &amp; clock" />
     <MESSAGE value="bug fix &amp; sounds" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug fix &amp; sounds" />
+    <MESSAGE value="first commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1326" y="692" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1638321351513">
@@ -529,9 +529,10 @@
       <screen x="0" y="25" width="3200" height="1722" />
     </state>
     <state x="1109" y="522" key="SettingsEditor/0.25.3200.1722/-1920.625.1920.1175@0.25.3200.1722" timestamp="1638300470523" />
-    <state x="1200" y="605" key="Vcs.Push.Dialog.v2" timestamp="1639759269430">
-      <screen x="0" y="25" width="3200" height="1722" />
+    <state x="720" y="403" key="Vcs.Push.Dialog.v2" timestamp="1642262875116">
+      <screen x="0" y="25" width="1920" height="1122" />
     </state>
+    <state x="720" y="403" key="Vcs.Push.Dialog.v2/0.25.1920.1122@0.25.1920.1122" timestamp="1642262875116" />
     <state x="1200" y="605" key="Vcs.Push.Dialog.v2/0.25.3200.1722/-1920.625.1920.1175@0.25.3200.1722" timestamp="1639759269430" />
     <state x="1200" y="623" key="Vcs.Push.Dialog.v2/0.25.3200.1775/-1920.625.1920.1122@0.25.3200.1775" timestamp="1638320775282" />
     <state x="100" y="125" width="3000" height="1522" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1638322161521">

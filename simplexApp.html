@@ -18,8 +18,8 @@
         <img src="interface_design/logo_white.svg" alt="SIMPLEX" class="logo">
         <div class="line right"></div>
     </div>
-    <div class="interface_w">
 
+    <div class="interface_w">
         <div class="touch_w">
             <div class="left">
                 <img src="interface_design/on_off.svg" alt="" state="off" onclick="onOff()">
@@ -48,8 +48,23 @@
             </div>
         </div>
     </div>
-    <div class="bottom_sec">
 
+    <div class="timer_w">
+        <div class="top"></div>
+    </div>
+
+    <div class="bottom_sec">
+        <div class="tabs">
+            <div class="tab flame active" onclick="toggleTab('flame')">
+                <img src="interface_design/flame_a.png" alt="flame">
+            </div>
+            <div class="tab clock" onclick="toggleTab('clock')">
+                <img src="interface_design/clock.png" alt="flame">
+            </div>
+            <div class="tab lock" onclick="toggleTab('lock')">
+                <img src="interface_design/lock.png" alt="flame">
+            </div>
+        </div>
     </div>
 </div>
 </body>

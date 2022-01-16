@@ -153,6 +153,7 @@ function onOff() {
         $('.herd').addClass('active')
         $('.top_sec').addClass('active')
         $('.bottom_sec').addClass('active')
+        $('.tabs').addClass('active')
         showHideW.show(300, 'linear', function () {
             touch_w.addClass('show')
             showHideW.addClass('show')
@@ -174,6 +175,7 @@ function onOff() {
                 $('.player').html('')
                 $('.top_sec').removeClass('active')
                 $('.bottom_sec').removeClass('active')
+                $('.tabs').removeClass('active')
             })
         }, 300)
         swiper.cover.css('height', '100%')
@@ -312,22 +314,19 @@ function switchMid(midI) {
             plate.removeClass('active')
         }
     }
-
-    // switchCook()
 }
 
-// function switchCook() {
-//     for (let plate of plates) {
-//         if (plate.touchPlate.html() > 0) {
-//             plate.plate.addClass('active')
-//         } else {
-//             plate.plate.removeClass('active')
-//         }
-//     }
-// }
-
-// setInterval(() => {
-//     let now = new Date()
-//     $('.clock p').html(now.getHours() + ':' + now.getMinutes())
-// },1000)
+function toggleTab(el) {
+    $('.tab').removeClass('active')
+    $('.tab.flame img').attr('src', 'interface_design/flame.png')
+    $('.tab.clock img').attr('src', 'interface_design/clock.png')
+    $('.tab.lock img').attr('src', 'interface_design/lock.png')
+    $('.'+el).addClass('active')
+    $('.'+el+' img').attr('src', 'interface_design/'+el+'_a.png')
+    if (el === 'flame') {
+        $('.interface_w').show()
+    } else {
+        $('.interface_w').hide()
+    }
+}
 
