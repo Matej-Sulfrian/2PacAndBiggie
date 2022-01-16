@@ -352,7 +352,6 @@ function showTimerPlates() {
 
 function lock() {
     let state = $('.lock_w').attr('state')
-    console.log(state)
     if (state === 'locked') {
         $('.lock_w').attr('state', 'unlocked')
         $('.lock_w img').attr('src', 'interface_design/big_lock_open.png')

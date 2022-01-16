@@ -290,7 +290,32 @@ html, body {
     font-size: 16px;
 }
 
-.timer, .lock_w {
+.b_w {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.timer {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    border: 2px solid white;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 32px;
+}
+
+.timer img {
+    margin: 20px 0;
+}
+
+.lock_w {
     width: 200px;
     height: 200px;
     border-radius: 100px;

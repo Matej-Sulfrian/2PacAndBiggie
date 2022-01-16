@@ -115,14 +115,7 @@
       <workItem from="1639747152370" duration="9248000" />
       <workItem from="1640096608572" duration="87000" />
       <workItem from="1642171139404" duration="6548000" />
-      <workItem from="1642362586490" duration="9457000" />
-    </task>
-    <task id="LOCAL-00016" summary="landing page">
-      <created>1624017585238</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1624017585238</updated>
+      <workItem from="1642362586490" duration="10107000" />
     </task>
     <task id="LOCAL-00017" summary="landing page, debug">
       <created>1624018491157</created>
@@ -460,7 +453,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642368400347</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="nearly final">
+      <created>1642372429538</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1642372429538</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -485,7 +485,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="E-Learning first video" />
     <MESSAGE value="E-Learning quiz 2.0" />
     <MESSAGE value="E-learning final 1st" />
     <MESSAGE value="E-learning final 1st (fix)" />
@@ -510,7 +509,8 @@
     <MESSAGE value="bug fix &amp; sounds" />
     <MESSAGE value="first commit" />
     <MESSAGE value="tab system" />
-    <option name="LAST_COMMIT_MESSAGE" value="tab system" />
+    <MESSAGE value="nearly final" />
+    <option name="LAST_COMMIT_MESSAGE" value="nearly final" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1326" y="692" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1638321351513">
@@ -529,10 +529,10 @@
       <screen x="0" y="25" width="3200" height="1722" />
     </state>
     <state x="1109" y="522" key="SettingsEditor/0.25.3200.1722/-1920.625.1920.1175@0.25.3200.1722" timestamp="1638300470523" />
-    <state x="720" y="403" key="Vcs.Push.Dialog.v2" timestamp="1642368402607">
+    <state x="720" y="403" key="Vcs.Push.Dialog.v2" timestamp="1642372431367">
       <screen x="0" y="25" width="1920" height="1122" />
     </state>
-    <state x="720" y="403" key="Vcs.Push.Dialog.v2/0.25.1920.1122@0.25.1920.1122" timestamp="1642368402607" />
+    <state x="720" y="403" key="Vcs.Push.Dialog.v2/0.25.1920.1122@0.25.1920.1122" timestamp="1642372431367" />
     <state x="1200" y="605" key="Vcs.Push.Dialog.v2/0.25.3200.1722/-1920.625.1920.1175@0.25.3200.1722" timestamp="1639759269430" />
     <state x="1200" y="623" key="Vcs.Push.Dialog.v2/0.25.3200.1775/-1920.625.1920.1122@0.25.3200.1775" timestamp="1638320775282" />
     <state x="100" y="125" width="3000" height="1522" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1638322161521">
