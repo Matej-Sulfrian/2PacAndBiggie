@@ -47,7 +47,7 @@ $(document).ready(function() {
             }
         }
         img.src = imgSrc[imgI]
-        setTimeout(setSizeAndImgData, 30)
+        setTimeout(setSizeAndImgData, 100)
     })
 
     function setSizeAndImgData() {
