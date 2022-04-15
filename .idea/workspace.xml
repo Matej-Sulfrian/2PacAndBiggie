@@ -17,6 +17,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6b17368c-3bea-41ea-a8ca-d4ad6a2150ef" name="Default Changelist" comment="commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/color2sound/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/color2sound/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/color2sound/js/colorConverter.js" beforeDir="false" afterPath="$PROJECT_DIR$/color2sound/js/colorConverter.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,14 +118,7 @@
       <workItem from="1642171139404" duration="6548000" />
       <workItem from="1642362586490" duration="10661000" />
       <workItem from="1642600476413" duration="50000" />
-      <workItem from="1650047559711" duration="248000" />
-    </task>
-    <task id="LOCAL-00019" summary="landing page menu">
-      <created>1624276814735</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1624276814735</updated>
+      <workItem from="1650047559711" duration="540000" />
     </task>
     <task id="LOCAL-00020" summary="landing page img prev">
       <created>1624281675463</created>
@@ -461,7 +456,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642373105079</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="first commit">
+      <created>1650047918463</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1650047918463</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -507,42 +509,17 @@
     <MESSAGE value="bug fix" />
     <MESSAGE value="bug fix &amp; clock" />
     <MESSAGE value="bug fix &amp; sounds" />
-    <MESSAGE value="first commit" />
     <MESSAGE value="tab system" />
     <MESSAGE value="nearly final" />
     <MESSAGE value="final" />
-    <option name="LAST_COMMIT_MESSAGE" value="final" />
+    <MESSAGE value="first commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1326" y="692" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1638321351513">
+    <state x="1200" y="605" key="Vcs.Push.Dialog.v2" timestamp="1650047921427">
       <screen x="0" y="25" width="3200" height="1722" />
     </state>
-    <state x="1326" y="692" key="#com.intellij.fileTypes.FileTypeChooser/0.25.3200.1722/-1920.625.1920.1175@0.25.3200.1722" timestamp="1638321351513" />
-    <state x="320" y="183" key="MergeDialog" timestamp="1638322010267">
-      <screen x="0" y="25" width="3200" height="1722" />
-    </state>
-    <state x="320" y="183" key="MergeDialog/0.25.3200.1722/-1920.625.1920.1175@0.25.3200.1722" timestamp="1638322010267" />
-    <state x="1238" y="651" key="MultipleFileMergeDialog" timestamp="1638322010333">
-      <screen x="0" y="25" width="3200" height="1722" />
-    </state>
-    <state x="1238" y="651" key="MultipleFileMergeDialog/0.25.3200.1722/-1920.625.1920.1175@0.25.3200.1722" timestamp="1638322010333" />
-    <state x="1109" y="522" key="SettingsEditor" timestamp="1638300470523">
-      <screen x="0" y="25" width="3200" height="1722" />
-    </state>
-    <state x="1109" y="522" key="SettingsEditor/0.25.3200.1722/-1920.625.1920.1175@0.25.3200.1722" timestamp="1638300470523" />
-    <state x="720" y="403" key="Vcs.Push.Dialog.v2" timestamp="1642373106971">
-      <screen x="0" y="25" width="1920" height="1122" />
-    </state>
+    <state x="1200" y="605" key="Vcs.Push.Dialog.v2/-1920.625.1920.1175/0.25.3200.1722@0.25.3200.1722" timestamp="1650047921427" />
     <state x="720" y="403" key="Vcs.Push.Dialog.v2/0.25.1920.1122@0.25.1920.1122" timestamp="1642373106971" />
-    <state x="1200" y="605" key="Vcs.Push.Dialog.v2/0.25.3200.1722/-1920.625.1920.1175@0.25.3200.1722" timestamp="1639759269430" />
-    <state x="1200" y="623" key="Vcs.Push.Dialog.v2/0.25.3200.1775/-1920.625.1920.1122@0.25.3200.1775" timestamp="1638320775282" />
-    <state x="100" y="125" width="3000" height="1522" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1638322161521">
-      <screen x="0" y="25" width="3200" height="1722" />
-    </state>
-    <state x="100" y="125" width="3000" height="1522" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.25.3200.1722/-1920.625.1920.1175@0.25.3200.1722" timestamp="1638322161521" />
-    <state x="1301" y="612" width="597" height="548" key="find.popup" timestamp="1639498395618">
-      <screen x="0" y="25" width="3200" height="1722" />
-    </state>
-    <state x="1301" y="612" width="597" height="548" key="find.popup/0.25.3200.1722/-1920.625.1920.1175@0.25.3200.1722" timestamp="1639498395618" />
   </component>
 </project>
