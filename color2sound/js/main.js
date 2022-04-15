@@ -49,7 +49,7 @@ $(document).ready(function() {
                 imgI = imgSrc.length -1
             }
         }
-        img.src = imgSrc[imgI]
+        img.src = 'content/' + imgSrc[imgI]
         setTimeout(setSizeAndImgData, 100)
     })
 
