@@ -1,7 +1,7 @@
 $(document).ready(function() {
     let c
     let cxt
-    let img
+    let img = document.querySelector('#img')
     let imgI = 0
     const h1 = $('h1')
     const h2 = $('h2')
@@ -11,7 +11,10 @@ $(document).ready(function() {
         "mona-lisa-la-gioconda.jpeg"
     ]
 
-    setSizeAndImgData();
+    if (img.complete) {
+        setSizeAndImgData();
+
+    }
 
     $('#c').mousemove(function (e) {
         var posX = $(this).offset().left,
