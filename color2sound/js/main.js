@@ -1,4 +1,18 @@
+
+
 $(document).ready(function() {
+
+    const osc = new Tone.Oscillator('80', "sine2").start();
+
+    let vol = new Tone.Volume(0).toDestination();
+
+
+    osc.connect(vol)
+    // osc.start()
+    // console.log(vol.toString())
+    vol.mute = true
+
+
     let c
     let cxt
     let img = document.querySelector('#img')
@@ -31,8 +45,12 @@ $(document).ready(function() {
 
         let hsl = RGBToHSL(imgData.data[0], imgData.data[1], imgData.data[2])
 
-        $(h1).css('color', hsl)
-        $(h2).html(hsl.replace('hsl', ''))
+        $(h1).css('color', 'hsl(' + hsl.h + ', ' + hsl.s + ', ' + hsl.l + ')')
+        $(h2).html(hsl.h + ', ' + hsl.s + ', ' + hsl.l)
+
+        // osc.baseType = 'sine' + hsl.h
+
+        osc.volume.value = percentToDecibels(hsl.l.replace('%', ''))
     })
 
     $('.switch').click((e) => {
@@ -51,6 +69,23 @@ $(document).ready(function() {
         }
         img.src = 'content/' + imgSrc[imgI]
         setTimeout(setSizeAndImgData, 100)
+    })
+
+    $('.settings').click(() => {
+        $('.settings').toggleClass('active')
+        $('.set').toggleClass('active')
+    })
+
+    $('.mute_button').click(() => {
+        let img = $('.mute_button img')
+        if ($(img).hasClass('mute')) {
+            $(img).attr('src', 'content/volume.png')
+            vol.mute = false
+        } else {
+            $(img).attr('src', 'content/mute.png')
+            vol.mute = true
+        }
+        $(img).toggleClass('mute')
     })
 
     function setSizeAndImgData() {
@@ -105,7 +140,7 @@ $(document).ready(function() {
 // wie man schaut vs was man anschaut
 
 // L = lautstärke (hell dunkel)
-// leise mit tiefbass filter (ubterschied in klagfarbe) -> lowpass
+// leise mit tiefpass filter (ubterschied in klagfarbe) -> lowpass
 
 // H = klangfarbe
 

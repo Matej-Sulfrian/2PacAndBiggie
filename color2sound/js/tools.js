@@ -42,5 +42,14 @@ function RGBToHSL(r,g,b) {
     s = +(s * 100).toFixed(1);
     l = +(l * 100).toFixed(1);
 
-    return "hsl(" + h + ", " + s + "%, " + l + "%)";
+    return hsl = {
+        'h': h,
+        's': s + '%',
+        'l': l + '%'
+    }
+    // return "hsl(" + h + ", " + s + "%, " + l + "%)";
+}
+
+function percentToDecibels(currentLevel) {
+    return 20 * Math.log10(currentLevel/100)
 }

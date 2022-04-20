@@ -7,16 +7,32 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/main.js"></script>
-    <script src="js/colorConverter.js"></script>
+    <script src="https://tonejs.github.io/build/Tone.js"></script>
+    <script src="https://raw.githubusercontent.com/audiojs/decibels/master/from-gain.js"></script>
+    <script type="module" src="js/main.js"></script>
+    <script src="js/tools.js"></script>
     <title>Eye Tracker Color Sound</title>
 </head>
 <body>
     <canvas id="c"></canvas>
     <img src="content/5449.jpeg" alt="" id="img">
     <div class="stats">
-        <h1>H S L</h1>
-        <h2>(0, 0%, 0%)</h2>
+        <div class="numb">
+            <h1>H S L</h1>
+            <h2>(0, 0%, 0%)</h2>
+        </div>
+        <div class="settings">
+            <img src="content/setting.png" alt="">
+        </div>
+        <div class="set">
+            <div class="row">
+                <p>Mute:</p>
+                <div class="mute_button">
+                    <img src="content/mute.png" class="mute" alt="">
+                </div>
+            </div>
+
+        </div>
     </div>
     <img src="content/right.svg" alt="" class="right switch">
     <img src="content/right.svg" alt="" class="left switch">

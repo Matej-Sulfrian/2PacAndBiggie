@@ -28,12 +28,72 @@ body {
     width: 250px;
 }
 
-h1 {
-    margin: 10px;
-    margin-bottom: 5px;
+.numb {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-h2 {
+.settings {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    padding: 2px;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.settings img {
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.settings.active img {
+    transform: rotate(90deg);
+    transition: all 0.3s;
+}
+
+.set {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.3s;
+}
+
+.set.active {
+    max-height: 57px;
+    transition: max-height 0.3s;
+}
+
+.set p {
+    margin-right: auto;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.mute_button {
+    padding: 10px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.mute_button img {
+    width: 100%;
+}
+
+h1, h2 {
     margin: 0;
     color: rgba(0,0,0,1);
 }
