@@ -1,16 +1,160 @@
+$(document).ready(function () {
+
+    // Master Volume
+    let master = new Tone.Volume(0);
+    const panner = new Tone.Panner(0).toDestination();
+    master.connect(panner)
+    let mute = false
+    master.mute = true
 
 
-$(document).ready(function() {
+    // SHEPERD TONE
 
-    const osc = new Tone.Oscillator('80', "sine2").start();
+    let sheperd = false
+    const shepVol = new Tone.Volume(0)
+    shepVol.connect(master)
+    shepVol.mute = true
 
-    let vol = new Tone.Volume(0).toDestination();
+    const osc1 = new Tone.Oscillator('C1', 'triangle').start()
+    const osc2 = new Tone.Oscillator('C2', 'triangle').start()
+
+    osc1.connect(shepVol)
+    osc2.connect(shepVol)
+
+    $('#sheperd').change(function () {
+        if ($(this).is(':checked')) {
+            sheperd = true
+            shepVol.mute = false
+        } else {
+            sheperd = false
+            shepVol.mute = true
+        }
+    })
 
 
-    osc.connect(vol)
-    // osc.start()
-    // console.log(vol.toString())
-    vol.mute = true
+    // EXPERIMENTAL
+
+    let exp = false
+    const volExpH = new Tone.Volume(0)
+    volExpH.connect(master)
+    volExpH.mute = true
+
+    let expS = false
+    const volExpS = new Tone.Volume(0)
+    volExpS.connect(master)
+    volExpS.mute = true
+
+    const noise = new Tone.Noise('white').start()
+    const filter = new Tone.Filter(400, 'bandpass', -48)
+    noise.connect(filter)
+
+    const volFilter = new Tone.Volume(0)
+    filter.connect(volFilter)
+    volFilter.connect(volExpS)
+
+    const synth = new Tone.Synth()
+    const volSynth = new Tone.Volume(0)
+    synth.connect(volSynth)
+    volSynth.connect(volExpH)
+
+
+    // SAMPLES
+
+
+    // PIANO
+    let pianoIsPlaying = false
+    let pianoNotes = {c3: {}, d3: {}, e3: {}, f3: {}, g3: {}, a3: {}, b3: {}, c4: {}}
+    for (let note in pianoNotes) {
+        console.log(note)
+        pianoNotes[note].isPlaying = false
+        pianoNotes[note].player = new Tone.Player('ion__piano-notes/ion__' + note + '.mp3')
+        pianoNotes[note].player.connect(volExpH)
+        pianoNotes[note].player.onstop = () => {
+            console.log (note + 'piano stop')
+            pianoNotes[note].isPlaying = false
+        }
+    }
+
+
+    // for (let note in pianoNotes) {
+    //     // console.log(note + ': ' + pianoNotes[note].player)
+    //     pianoNotes[note].player.connect(volExpH)
+    //     pianoNotes[note].player.onstop = () => {
+    //         console.log(note  + 'piano stop')
+    //         pianoNotes[note].isPlaying = false
+    //     }
+    // }
+
+    //GUITAR
+
+    let guitarMute = {c2: {}, d2: {}, e2: {}, f2: {}, g2: {}, a2: {}, b2: {}, c3: {}}
+    let guitarPlay = false
+    for (let note in guitarMute) {
+        console.log(note)
+        guitarMute[note].isPlaying = false
+        guitarMute[note].player = new Tone.Player('electric-guitar-power-chords/ax-grinder__' + note + '.wav')
+        guitarMute[note].player.volume.value = -8
+        guitarMute[note].player.connect(volExpH)
+        guitarMute[note].player.onstop = () => {
+            console.log (note + 'mute guitar stop')
+            guitarMute[note].isPlaying = false
+            guitarPlay = false
+        }
+    }
+
+    console.log(guitarMute)
+
+    // const oscBass1 = new Tone.Oscillator('40', 'square').start()
+    // const oscBass2 = new Tone.Oscillator('40', 'square').start()
+    // const oscVol = new Tone.Volume(-25)
+    // oscBass1.connect(oscVol)
+    // oscBass2.csynth.triggerAttackRelease.conne '16n', '32n)
+
+    // synth.triggerAttack('C3')
+
+    $('#expH').change(function () {
+        if ($(this).is(':checked')) {
+            exp = true
+            volExpH.mute = false
+        } else {
+            exp = false
+            volExpH.mute = true
+        }
+    })
+
+    $('#expS').change(function () {
+        if ($(this).is(':checked')) {
+            expS = true
+            volExpS.mute = false
+        } else {
+            expS = false
+            volExpS.mute = true
+        }
+    })
+
+    let expV = false
+    $('#expV').change(function () {
+        if ($(this).is(':checked')) {
+            expV = true
+        } else {
+            expV = false
+        }
+    })
+
+    let pan = false
+    $('#pan').change(function () {
+        if ($(this).is(':checked')) {
+            pan = true
+        } else {
+            pan = false
+        }
+    })
+
+    // sebezähne statt sinus -> filter
+
+
+    // filter.connect(vol)
+    // synth.connect(vol)
 
 
     let c
@@ -20,15 +164,25 @@ $(document).ready(function() {
     const h1 = $('h1')
     const h2 = $('h2')
     const imgSrc = [
+        "Hsl-hsv_models.svg.png",
+        "1_dhEdk3qMhkK1tQjXfwuQFw.png",
+        "HSV_color_space_stereographic.png",
+        "Concentric-Circles.jpeg",
+        "kandinsky1.jpeg",
+        "kandinsky-sketch-for-several-circles.jpeg",
+        "TriptyquedeKrefeld_02.jpeg",
+        "im-473216.jpeg",
+        "pollock.jpeg",
         "5449.jpeg",
         "019b99b6397884cc7dfb0d9b6fd2f281.jpeg",
-        "mona-lisa-la-gioconda.jpeg"
     ]
 
     if (img.complete) {
         setSizeAndImgData();
-
     }
+
+    let xLast = 0
+    let yLast = 0
 
     $('#c').mousemove(function (e) {
         var posX = $(this).offset().left,
@@ -37,25 +191,256 @@ $(document).ready(function() {
         let x = e.pageX - posX
         let y = e.pageY - posY
 
+        // let cursorPosX = x - 25
+        // let cursorPosY = y - 25
+        // let cursor = $('.cursor')
+        // $(cursor).css('left', cursorPosX + 'px')
+        // $(cursor).css('top', cursorPosY + 'px')
+
         let imgData = cxt.getImageData(x, y, 1, 1)
 
         // HSL -> intuitiever
-        // HSV (vielleicht besser)
-        // HSB
 
-        let hsl = RGBToHSL(imgData.data[0], imgData.data[1], imgData.data[2])
+        // filter auf S (sättigung des tons)
+        // oder ein 2. osc -> filter mit starker resonanz / güte / q factor (in db) = sinus
 
-        $(h1).css('color', 'hsl(' + hsl.h + ', ' + hsl.s + ', ' + hsl.l + ')')
-        $(h2).html(hsl.h + ', ' + hsl.s + ', ' + hsl.l)
+        // filter auf weises rauschen -> wie pfeifen (mit band pass)
 
-        // osc.baseType = 'sine' + hsl.h
+        // yves klein
 
-        osc.volume.value = percentToDecibels(hsl.l.replace('%', ''))
+        // let hsl = RGBToHSL(imgData.data[0], imgData.data[1], imgData.data[2])
+        let hsv = rgb2hsv(imgData.data[0], imgData.data[1], imgData.data[2])
+
+        $(h1).css('color', 'rgb(' + (255 - imgData.data[0]) + ', ' + (255 - imgData.data[1]) + ', ' + (255 - imgData.data[2]) + ')')
+        $(h1).css('background-color', 'rgb(' + imgData.data[0] + ', ' + imgData.data[1] + ', ' + imgData.data[2] + ')')
+        $(h2).html(hsv.h + ', ' + hsv.s + ', ' + hsv.v)
+
+
+        // picture filter setting -> blur
+
+
+        // SHEPERD TONE
+
+        if (sheperd) {
+
+            let deltaX = x - xLast
+            let deltaY = y - yLast
+            let deltaMove = deltaX * deltaX + deltaY * deltaY
+
+            if (deltaMove > 100) {
+
+                xLast = x
+                yLast = y
+
+                let rampTime = 0.1
+                let pO = hsv.h * 100 / 360
+
+                osc1.volume.rampTo(percentToDecibels(pO), 0.1)
+                osc2.volume.rampTo(percentToDecibels(100 - pO), 0.1)
+
+                osc1.frequency.rampTo(h2frequencyC1_C3(hsv.h), rampTime)
+                osc2.frequency.rampTo(h2frequencyC3_C5(hsv.h), rampTime)
+            }
+        } else {
+            shepVol.mute = true
+        }
+
+
+        // EXPERIMENTAL
+
+        if (exp) {
+
+            // let deltaX = x - xLast
+            // let deltaY = y - yLast
+            // let deltaMove = deltaX * deltaX + deltaY * deltaY
+
+            if (hsv.h < 360) {
+                let noteName = Object.keys(pianoNotes)[Math.floor(hsv.h / 45)]
+                let pianoNote = pianoNotes[noteName]
+
+                if (!pianoNote.isPlaying) {
+                    pianoNote.player.start()
+                    pianoNote.isPlaying = true
+                }
+            }
+
+            let s = hsv.s.replace('%', '')
+            if (s < 100) {
+                let noteName = Object.keys(guitarMute)[Math.floor(s / 20)]
+                let guitarNote = guitarMute[noteName]
+
+                if (!guitarNote.isPlaying && !guitarPlay) {
+                    guitarNote.player.start()
+                    guitarNote.isPlaying = true
+                    guitarPlay = true
+                }
+            }
+
+
+
+            // if (deltaMove > 10000) {
+            //
+            //     xLast = x
+            //     yLast = y
+            //
+            //     let normalized = 0
+            //     let s = hsv.s.replace('%', '')
+            //     if (s < 10) {
+            //         normalized = s * 2
+            //     } else if (s > 10 && s < 50) {
+            //         normalized = s * 3
+            //     } else {
+            //         normalized = s * 4
+            //     }
+            //
+            //
+            //
+            //
+            //     if (hsv.h <= 45) {
+            //         // synth.triggerAttackRelease('C2', '4n')
+            //         // synth.triggerAttackRelease('C3', '4n')
+            //
+            //         console.log()
+            //
+            //         if (!pianoNotes.c3.isPlaying) {
+            //             pianoNotes.c3.player.start()
+            //         }
+            //
+            //
+            //         console.log(45)
+            //     } else if (hsv.h <= 90) {
+            //         // synth.triggerAttackRelease('D2', '4n')
+            //         // synth.triggerAttackRelease('E3', '4n')
+            //
+            //         console.log(pianoNotes[Object.keys(pianoNotes)[(hsv.h / 45).toFixed(0)]])
+            //
+            //         if (!pianoNotes.d3.isPlaying) {
+            //             pianoNotes.d3.player.start()
+            //         }
+            //
+            //
+            //         console.log(90)
+            //     } else if (hsv.h <= 135) {
+            //         // synth.triggerAttackRelease('E2', '4n')
+            //         // synth.triggerAttackRelease('G3', '4n')
+            //
+            //         console.log(pianoNotes[Object.keys(pianoNotes)[(hsv.h / 45).toFixed(0)]])
+            //
+            //         if (!pianoNotes.e3.isPlaying) {
+            //             pianoNotes.e3.player.start()
+            //         }
+            //
+            //
+            //         console.log(135)
+            //     } else if (hsv.h <= 180) {
+            //         // synth.triggerAttackRelease('F2', '4n')
+            //         // synth.triggerAttackRelease('B3', '4n')
+            //
+            //         console.log(pianoNotes[Object.keys(pianoNotes)[(hsv.h / 45).toFixed(0)]])
+            //
+            //         if (!pianoNotes.f3.isPlaying) {
+            //             pianoNotes.f3.player.start()
+            //         }
+            //
+            //
+            //         console.log(180)
+            //     } else if (hsv.h <= 225) {
+            //         // synth.triggerAttackRelease('G2', '4n')
+            //         // synth.triggerAttackRelease('D4', '4n')
+            //
+            //         console.log(pianoNotes[Object.keys(pianoNotes)[(hsv.h / 45).toFixed(0)]])
+            //
+            //         if (!pianoNotes.g3.isPlaying) {
+            //             pianoNotes.g3.player.start()
+            //         }
+            //
+            //
+            //         console.log(225)
+            //     } else if (hsv.h <= 270) {
+            //         // synth.triggerAttackRelease('A2', '4n')
+            //         // synth.triggerAttackRelease('F4', '4n')
+            //
+            //         console.log(pianoNotes[Object.keys(pianoNotes)[(hsv.h / 45).toFixed(0)]])
+            //
+            //         if (!pianoNotes.a3.isPlaying) {
+            //             pianoNotes.a3.player.start()
+            //         }
+            //
+            //
+            //         console.log(270)
+            //     } else if (hsv.h <= 315) {
+            //         // synth.triggerAttackRelease('B2', '4n')
+            //         // synth.triggerAttackRelease('A4', '4n')
+            //
+            //         console.log(pianoNotes[Object.keys(pianoNotes)[(hsv.h / 45).toFixed(0)]])
+            //
+            //         if (!pianoNotes.b3.isPlaying) {
+            //             pianoNotes.b3.player.start()
+            //         }
+            //
+            //
+            //         console.log(315)
+            //     } else if (hsv.h <= 360) {
+            //         // synth.triggerAttackRelease('C3', '4n')
+            //         // synth.triggerAttackRelease('C5', '4n')
+            //
+            //         console.log(pianoNotes[Object.keys(pianoNotes)[(hsv.h / 45).toFixed(0)]])
+            //
+            //         if (!pianoNotes.c4.isPlaying) {
+            //             pianoNotes.c4.player.start()
+            //         }
+            //
+            //
+            //         console.log(360)
+            //     }
+            // }
+
+
+        } else {
+            volExpH.mute = true
+        }
+
+
+        if (expS) {
+            let s = hsv.s.replace('%', '')
+            volFilter.volume.rampTo(percentToDecibels(s), 0.1)
+
+        }
+
+        if (expV) {
+
+            let normalized = 0
+            let s = hsv.s.replace('%', '')
+            if (s < 10) {
+                normalized = s * 2
+            } else if (s > 10 && s < 50) {
+                normalized = s * 3
+            } else {
+                normalized = s * 4
+            }
+
+            filter.frequency.rampTo(normalized + 1000, 0.1)
+        }
+
+        if (pan) {
+            let xTotal = c.width / 2
+
+            let panTo = 0
+            if (x < xTotal) {
+                // let p = (x * 100) / xTotal
+                panTo = ((100 - ((x * 100) / xTotal)) / 100)
+            } else if (x >= xTotal) {
+                // let p = ((x/2) * 100) / xTotal
+                panTo = ((100 - ((x * 100) / xTotal)) / 100)
+            }
+            panner.pan.rampTo(panTo, 0.1);
+        }
+
     })
 
     $('.switch').click((e) => {
         if (e.target.classList.contains('right')) {
-            if (imgI < imgSrc.length-1) {
+            if (imgI < imgSrc.length - 1) {
                 imgI++
             } else {
                 imgI = 0
@@ -64,7 +449,7 @@ $(document).ready(function() {
             if (imgI > 0) {
                 imgI--
             } else {
-                imgI = imgSrc.length -1
+                imgI = imgSrc.length - 1
             }
         }
         img.src = 'content/' + imgSrc[imgI]
@@ -80,10 +465,12 @@ $(document).ready(function() {
         let img = $('.mute_button img')
         if ($(img).hasClass('mute')) {
             $(img).attr('src', 'content/volume.png')
-            vol.mute = false
+            master.mute = false
+            mute = false
         } else {
             $(img).attr('src', 'content/mute.png')
-            vol.mute = true
+            master.mute = true
+            mute = true
         }
         $(img).toggleClass('mute')
     })
@@ -95,6 +482,8 @@ $(document).ready(function() {
 
         c.width = window.innerWidth
         c.height = window.innerHeight
+
+        console.log(c.width)
 
         cxt.drawImage(img, getFrame().offsetX, getFrame().offsetY, getFrame().width, getFrame().height, 0, 0, c.width, c.height)
 
@@ -125,12 +514,6 @@ $(document).ready(function() {
 
     window.addEventListener('resize', setSizeAndImgData)
 })
-
-
-
-
-
-
 
 
 // oszilatoren

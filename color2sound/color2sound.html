@@ -15,10 +15,10 @@
 </head>
 <body>
     <canvas id="c"></canvas>
-    <img src="content/5449.jpeg" alt="" id="img">
+    <img src="content/Hsl-hsv_models.svg.png" alt="" id="img">
     <div class="stats">
         <div class="numb">
-            <h1>H S L</h1>
+            <h1>H S V</h1>
             <h2>(0, 0%, 0%)</h2>
         </div>
         <div class="settings">
@@ -31,9 +31,59 @@
                     <img src="content/mute.png" class="mute" alt="">
                 </div>
             </div>
-
+            <div class="row">
+                <p>H-Influence:</p>
+                <div class="radioSet">
+                    <div class="radioRow">
+                        <input type="checkbox" id="sheperd">
+                        <label for="sheperd">Sheperd Tone</label>
+                    </div>
+                    <div class="radioRow">
+                        <input type="checkbox" id="expH">
+                        <label for="expH">Experimental<br>
+                            <i>
+                                - C3 major scale piano
+                            </i>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <p>S-Influence:</p>
+                <div class="radioSet">
+                    <div class="radioRow">
+                        <input type="checkbox" id="expS">
+                        <label for="expS">Experimental<br>
+                            <i>- filter noise volume</i>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <p>V-Influence:</p>
+                <div class="radioSet">
+                    <div class="radioRow">
+                        <input type="checkbox" id="expV">
+                        <label for="expV">Experimental<br>
+                            <i>- filter noise frequency</i>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <p>Pan</p>
+                <div class="radioSet">
+                    <div class="radioRow">
+                        <input type="checkbox" id="pan">
+                        <label for="pan">left / right<br>
+                            <i>- on / off</i>
+                        </label>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+<!--    <div class="cursor"></div>-->
     <img src="content/right.svg" alt="" class="right switch">
     <img src="content/right.svg" alt="" class="left switch">
 </body>
