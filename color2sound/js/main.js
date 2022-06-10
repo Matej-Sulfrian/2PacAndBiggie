@@ -169,20 +169,16 @@ $(document).ready(function () {
     $('.switch input').change(function () {
         if ($(this).is(':checked')) {
             console.log('instrumental')
-            for (let el in expElements) {
-                $(el).hide()
-            }
-            for (let el in instElements) {
-                $(el).show()
-            }
+            expElements.forEach(el => $(el).hide())
+            instElements.forEach(el => $(el).show())
+            $('.mode p:nth-child(1)').css('color', 'unset')
+            $('.mode p:nth-child(3)').css('color', '#2196F3')
         } else {
             console.log('experimental')
-            for (let el in expElements) {
-                $(el).show()
-            }
-            for (let el in instElements) {
-                $(el).hide()
-            }
+            expElements.forEach(el => $(el).show())
+            instElements.forEach(el => $(el).hide())
+            $('.mode p:nth-child(1)').css('color', '#ff4242')
+            $('.mode p:nth-child(3)').css('color', 'unset')
         }
     })
 

@@ -67,7 +67,7 @@ body {
 }
 
 .set.active {
-    max-height: 500px;
+    max-height: 250px;
     transition: max-height 0.3s;
 }
 
@@ -97,6 +97,10 @@ body {
     justify-content: start;
     margin: 2.5px 0;
     margin-bottom: 10px;
+}
+
+.radioRow.exp {
+    display: none;
 }
 
 label i {
@@ -135,7 +139,8 @@ label i {
 }
 
 .mode p:nth-child(1) {
-    color: #ff4242;
+    color: unset;
+    /*font-weight: normal;*/
 }
 
 .switch {
