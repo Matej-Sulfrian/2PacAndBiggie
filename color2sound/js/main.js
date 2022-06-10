@@ -15,8 +15,8 @@ $(document).ready(function () {
     shepVol.connect(master)
     shepVol.mute = true
 
-    const osc1 = new Tone.Oscillator('C1', 'triangle').start()
-    const osc2 = new Tone.Oscillator('C2', 'triangle').start()
+    const osc1 = new Tone.Oscillator('C1', 'sawtooth').start()
+    const osc2 = new Tone.Oscillator('C2', 'sawtooth').start()
 
     osc1.connect(shepVol)
     osc2.connect(shepVol)
@@ -32,12 +32,8 @@ $(document).ready(function () {
     })
 
 
-    // EXPERIMENTAL
 
-    let exp = false
-    const volExpH = new Tone.Volume(0)
-    volExpH.connect(master)
-    volExpH.mute = true
+
 
     let expS = false
     const volExpS = new Tone.Volume(0)
@@ -55,54 +51,59 @@ $(document).ready(function () {
     const synth = new Tone.Synth()
     const volSynth = new Tone.Volume(0)
     synth.connect(volSynth)
-    volSynth.connect(volExpH)
+    volSynth.connect(master)
 
 
-    // SAMPLES
+    // SAMPLES ************************************************************************
 
 
-    // PIANO
+    // PIANO --------------------------------------------------------------------------
+
+    // vol
+    let piano = false
+    const volPiano = new Tone.Volume(0)
+    volPiano.connect(master)
+    volPiano.mute = true
+
+    // notes
     let pianoIsPlaying = false
     let pianoNotes = {c3: {}, d3: {}, e3: {}, f3: {}, g3: {}, a3: {}, b3: {}, c4: {}}
     for (let note in pianoNotes) {
-        console.log(note)
+        // console.log(note)
         pianoNotes[note].isPlaying = false
         pianoNotes[note].player = new Tone.Player('ion__piano-notes/ion__' + note + '.mp3')
-        pianoNotes[note].player.connect(volExpH)
+        pianoNotes[note].player.connect(volPiano)
         pianoNotes[note].player.onstop = () => {
-            console.log (note + 'piano stop')
+            // console.log (note + 'piano stop')
             pianoNotes[note].isPlaying = false
         }
     }
 
 
-    // for (let note in pianoNotes) {
-    //     // console.log(note + ': ' + pianoNotes[note].player)
-    //     pianoNotes[note].player.connect(volExpH)
-    //     pianoNotes[note].player.onstop = () => {
-    //         console.log(note  + 'piano stop')
-    //         pianoNotes[note].isPlaying = false
-    //     }
-    // }
+    // GUITAR ------------------------------------------------------------------------
 
-    //GUITAR
+    // vol
+    let guitarOpen = false
+    const volGuitarOpen = new Tone.Volume(-8)
+    volGuitarOpen.connect(master)
 
-    let guitarMute = {c2: {}, d2: {}, e2: {}, f2: {}, g2: {}, a2: {}, b2: {}, c3: {}}
-    let guitarPlay = false
-    for (let note in guitarMute) {
-        console.log(note)
-        guitarMute[note].isPlaying = false
-        guitarMute[note].player = new Tone.Player('electric-guitar-power-chords/ax-grinder__' + note + '.wav')
-        guitarMute[note].player.volume.value = -8
-        guitarMute[note].player.connect(volExpH)
-        guitarMute[note].player.onstop = () => {
-            console.log (note + 'mute guitar stop')
-            guitarMute[note].isPlaying = false
-            guitarPlay = false
+    // notes
+    volGuitarOpen.mute = true
+    let guitarOpenNotes = {c2: {}, d2: {}, e2: {}, f2: {}, g2: {}, a2: {}, b2: {}, c3: {}}
+    let guitarOpenIsPlaying = false
+    for (let note in guitarOpenNotes) {
+        // console.log(note)
+        guitarOpenNotes[note].isPlaying = false
+        guitarOpenNotes[note].player = new Tone.Player('electric-guitar-power-chords/ax-grinder__' + note + '.wav')
+        guitarOpenNotes[note].player.connect(volGuitarOpen)
+        guitarOpenNotes[note].player.onstop = () => {
+            // console.log (note + 'mute guitar stop')
+            guitarOpenNotes[note].isPlaying = false
+            guitarOpenIsPlaying = false
         }
     }
 
-    console.log(guitarMute)
+    // console.log(guitarOpenNotes)
 
     // const oscBass1 = new Tone.Oscillator('40', 'square').start()
     // const oscBass2 = new Tone.Oscillator('40', 'square').start()
@@ -112,13 +113,23 @@ $(document).ready(function () {
 
     // synth.triggerAttack('C3')
 
-    $('#expH').change(function () {
+    $('#piano').change(function () {
         if ($(this).is(':checked')) {
-            exp = true
-            volExpH.mute = false
+            piano = true
+            volPiano.mute = false
         } else {
-            exp = false
-            volExpH.mute = true
+            piano = false
+            volPiano.mute = true
+        }
+    })
+
+    $('#guitarOpen').change(function () {
+        if ($(this).is(':checked')) {
+            guitarOpen = true
+            volGuitarOpen.mute = false
+        } else {
+            guitarOpen = false
+            volGuitarOpen.mute = true
         }
     })
 
@@ -149,6 +160,33 @@ $(document).ready(function () {
             pan = false
         }
     })
+
+
+
+
+    let expElements = document.querySelectorAll('.radioRow.exp')
+    let instElements = document.querySelectorAll('.radioRow.inst')
+    $('.switch input').change(function () {
+        if ($(this).is(':checked')) {
+            console.log('instrumental')
+            for (let el in expElements) {
+                $(el).hide()
+            }
+            for (let el in instElements) {
+                $(el).show()
+            }
+        } else {
+            console.log('experimental')
+            for (let el in expElements) {
+                $(el).show()
+            }
+            for (let el in instElements) {
+                $(el).hide()
+            }
+        }
+    })
+
+
 
     // sebezähne statt sinus -> filter
 
@@ -246,9 +284,9 @@ $(document).ready(function () {
         }
 
 
-        // EXPERIMENTAL
+        // Piano -------------------------------------------------------------------
 
-        if (exp) {
+        if (piano) {
 
             // let deltaX = x - xLast
             // let deltaY = y - yLast
@@ -264,17 +302,7 @@ $(document).ready(function () {
                 }
             }
 
-            let s = hsv.s.replace('%', '')
-            if (s < 100) {
-                let noteName = Object.keys(guitarMute)[Math.floor(s / 20)]
-                let guitarNote = guitarMute[noteName]
 
-                if (!guitarNote.isPlaying && !guitarPlay) {
-                    guitarNote.player.start()
-                    guitarNote.isPlaying = true
-                    guitarPlay = true
-                }
-            }
 
 
 
@@ -397,7 +425,26 @@ $(document).ready(function () {
 
 
         } else {
-            volExpH.mute = true
+            volPiano.mute = true
+        }
+
+
+        // Guitar Open --------------------------------------------------------------
+
+        if (guitarOpen) {
+            let s = hsv.s.replace('%', '')
+            if (s < 100) {
+                let noteName = Object.keys(guitarOpenNotes)[Math.floor(s / 20)]
+                let guitarNote = guitarOpenNotes[noteName]
+
+                if (!guitarNote.isPlaying && !guitarOpenIsPlaying) {
+                    guitarNote.player.start()
+                    guitarNote.isPlaying = true
+                    guitarOpenIsPlaying = true
+                }
+            }
+        } else {
+            volGuitarOpen.mute = true
         }
 
 
@@ -438,7 +485,7 @@ $(document).ready(function () {
 
     })
 
-    $('.switch').click((e) => {
+    $('.switchImg').click((e) => {
         if (e.target.classList.contains('right')) {
             if (imgI < imgSrc.length - 1) {
                 imgI++

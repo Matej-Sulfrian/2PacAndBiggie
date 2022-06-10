@@ -14,77 +14,90 @@
     <title>Eye Tracker Color Sound</title>
 </head>
 <body>
-    <canvas id="c"></canvas>
-    <img src="content/Hsl-hsv_models.svg.png" alt="" id="img">
-    <div class="stats">
-        <div class="numb">
-            <h1>H S V</h1>
-            <h2>(0, 0%, 0%)</h2>
+<canvas id="c"></canvas>
+<img src="content/Hsl-hsv_models.svg.png" alt="" id="img">
+<div class="stats">
+    <div class="numb">
+        <h1>H S V</h1>
+        <h2>(0, 0%, 0%)</h2>
+    </div>
+    <div class="settings">
+        <img src="content/setting.png" alt="">
+    </div>
+    <div class="mute_button">
+        <img src="content/mute.png" class="mute" alt="">
+    </div>
+    <div class="set">
+        <div class="row">
+            <div class="mode">
+                <p>Experimental</p>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                </label>
+                <p>Instrumental</p>
+            </div>
         </div>
-        <div class="settings">
-            <img src="content/setting.png" alt="">
+        <div class="row">
+            <p>H-Influence:</p>
+            <div class="radioSet">
+                <div class="radioRow exp">
+                    <input type="checkbox" id="sheperd">
+                    <label for="sheperd">Sheperd Tone<br>
+                    <i>2 sawtooth oscillators</i>
+                    </label>
+                </div>
+                <div class="radioRow inst">
+                    <input type="checkbox" id="piano">
+                    <label for="piano">Piano<br>
+                        <i>c3 major cale</i>
+                    </label>
+                </div>
+            </div>
         </div>
-        <div class="set">
-            <div class="row">
-                <p>Mute:</p>
-                <div class="mute_button">
-                    <img src="content/mute.png" class="mute" alt="">
+        <div class="row">
+            <p>S-Influence:</p>
+            <div class="radioSet">
+                <div class="radioRow exp">
+                    <input type="checkbox" id="expS">
+                    <label for="expS">Experimental<br>
+                        <i>- filter noise volume</i>
+                    </label>
+                </div>
+                <div class="radioRow inst">
+                    <input type="checkbox" id="guitarOpen">
+                    <label for="guitarOpen">E-Guitar Open<br>
+                        <i>chords in c2 major scale</i>
+                    </label>
                 </div>
             </div>
-            <div class="row">
-                <p>H-Influence:</p>
-                <div class="radioSet">
-                    <div class="radioRow">
-                        <input type="checkbox" id="sheperd">
-                        <label for="sheperd">Sheperd Tone</label>
-                    </div>
-                    <div class="radioRow">
-                        <input type="checkbox" id="expH">
-                        <label for="expH">Experimental<br>
-                            <i>
-                                - C3 major scale piano
-                            </i>
-                        </label>
-                    </div>
+        </div>
+        <div class="row">
+            <p>V-Influence:</p>
+            <div class="radioSet">
+                <div class="radioRow exp">
+                    <input type="checkbox" id="expV">
+                    <label for="expV">Experimental<br>
+                        <i>- filter noise frequency</i>
+                    </label>
                 </div>
             </div>
-            <div class="row">
-                <p>S-Influence:</p>
-                <div class="radioSet">
-                    <div class="radioRow">
-                        <input type="checkbox" id="expS">
-                        <label for="expS">Experimental<br>
-                            <i>- filter noise volume</i>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <p>V-Influence:</p>
-                <div class="radioSet">
-                    <div class="radioRow">
-                        <input type="checkbox" id="expV">
-                        <label for="expV">Experimental<br>
-                            <i>- filter noise frequency</i>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <p>Pan</p>
-                <div class="radioSet">
-                    <div class="radioRow">
-                        <input type="checkbox" id="pan">
-                        <label for="pan">left / right<br>
-                            <i>- on / off</i>
-                        </label>
-                    </div>
+        </div>
+        <div class="row">
+            <p>Pan</p>
+            <div class="radioSet">
+                <div class="radioRow">
+                    <input type="checkbox" id="pan">
+                    <label for="pan">left / right<br>
+                        <i>- on / off</i>
+                    </label>
                 </div>
             </div>
         </div>
     </div>
+</div>
 <!--    <div class="cursor"></div>-->
-    <img src="content/right.svg" alt="" class="right switch">
-    <img src="content/right.svg" alt="" class="left switch">
+<img src="content/right.svg" alt="" class="right switchImg">
+<img src="content/right.svg" alt="" class="left switchImg">
 </body>
 </html>
