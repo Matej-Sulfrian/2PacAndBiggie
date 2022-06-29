@@ -1,4 +1,25 @@
 $(document).ready(function () {
+    let c
+    let cxt
+    let img = document.querySelector('#img')
+    let imgI = 0
+    const h1 = $('h1')
+    const h2 = $('h2')
+    const imgSrc = [
+        "Hsl-hsv_models.svg.png",
+        "1_dhEdk3qMhkK1tQjXfwuQFw.png",
+        "HSV_color_space_stereographic.png",
+        "Concentric-Circles.jpeg",
+        "kandinsky1.jpeg",
+        "kandinsky-sketch-for-several-circles.jpeg",
+        "TriptyquedeKrefeld_02.jpeg",
+        "im-473216.jpeg",
+        "pollock.jpeg",
+        "5449.jpeg",
+        "019b99b6397884cc7dfb0d9b6fd2f281.jpeg",
+    ]
+    img.src = 'content/' + imgSrc[imgI]
+    setSizeAndImgData()
 
     // Controls
     let controls = 'mouse'
@@ -247,29 +268,7 @@ $(document).ready(function () {
 
 
 
-    let c
-    let cxt
-    let img = document.querySelector('#img')
-    let imgI = 0
-    const h1 = $('h1')
-    const h2 = $('h2')
-    const imgSrc = [
-        "Hsl-hsv_models.svg.png",
-        "1_dhEdk3qMhkK1tQjXfwuQFw.png",
-        "HSV_color_space_stereographic.png",
-        "Concentric-Circles.jpeg",
-        "kandinsky1.jpeg",
-        "kandinsky-sketch-for-several-circles.jpeg",
-        "TriptyquedeKrefeld_02.jpeg",
-        "im-473216.jpeg",
-        "pollock.jpeg",
-        "5449.jpeg",
-        "019b99b6397884cc7dfb0d9b6fd2f281.jpeg",
-    ]
 
-    if (img.complete && img.naturalHeight !== 0) {
-        setSizeAndImgData();
-    }
 
     let xLast = 0
     let yLast = 0
@@ -562,7 +561,7 @@ $(document).ready(function () {
             }
         }
         img.src = 'content/' + imgSrc[imgI]
-        setTimeout(setSizeAndImgData, 100)
+        setSizeAndImgData()
     })
 
     $('.settings').click(() => {
@@ -593,12 +592,16 @@ $(document).ready(function () {
         c.width = window.innerWidth
         c.height = window.innerHeight
 
-        console.log(c.width)
+        // console.log(c.width)
 
-        cxt.drawImage(img, getFrame().offsetX, getFrame().offsetY, getFrame().width, getFrame().height, 0, 0, c.width, c.height)
+        img.onload = () => {
+            cxt.drawImage(img, getFrame().offsetX, getFrame().offsetY, getFrame().width, getFrame().height, 0, 0, c.width, c.height)
 
-        $('.right').css('top', window.innerHeight / 2 - 25 + 'px')
-        $('.left').css('top', window.innerHeight / 2 - 25 + 'px')
+            $('.right').css('top', window.innerHeight / 2 - 25 + 'px')
+            $('.left').css('top', window.innerHeight / 2 - 25 + 'px')
+        }
+
+
     }
 
     function getFrame() {
