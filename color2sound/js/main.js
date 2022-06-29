@@ -1,5 +1,60 @@
 $(document).ready(function () {
 
+    // Controls
+    let controls = 'mouse'
+    $('#mouse').change(function (e) {
+        if (e.target.checked) {
+            GazeCloudAPI.StopEyeTracking();
+            controls = 'mouse'
+            console.log(controls)
+        }
+    })
+
+    // GazeCloudAPI
+
+    let calibrated = false;
+    GazeCloudAPI.OnCalibrationComplete =function(){ console.log('gaze Calibration Complete'); calibrated = true  }
+    GazeCloudAPI.OnCamDenied =  function(){ console.log('camera  access denied')  }
+    GazeCloudAPI.OnError =  function(msg){ console.log('err: ' + msg)  }
+    GazeCloudAPI.UseClickRecalibration = true;
+    GazeCloudAPI.OnResult = function (GazeData) {
+        /*
+                GazeData.state // 0: valid gaze data; -1 : face tracking lost, 1 : gaze uncalibrated
+                GazeData.docX // gaze x in document coordinates
+                GazeData.docY // gaze y in document cordinates
+                GazeData.time // timestamp
+            */
+
+
+        var x = GazeData.docX;
+        var y = GazeData.docY;
+
+        if (controls === 'eye' && calibrated) {
+            play(x, y)
+        }
+
+        var gaze = document.getElementById("gaze");
+        x -= gaze .clientWidth/2;
+        y -= gaze .clientHeight/2;
+
+
+
+        gaze.style.left = x + "px";
+        gaze.style.top = y + "px";
+
+
+        if(GazeData.state != 0)
+        {
+            if( gaze.style.display  == 'block')
+                gaze  .style.display = 'none';
+        }
+        else
+        {
+            if( gaze.style.display  == 'none')
+                gaze  .style.display = 'block';
+        }
+    }
+
     // Master Volume
     let master = new Tone.Volume(0);
     const panner = new Tone.Panner(0).toDestination();
@@ -111,7 +166,15 @@ $(document).ready(function () {
     // oscBass1.connect(oscVol)
     // oscBass2.csynth.triggerAttackRelease.conne '16n', '32n)
 
-    // synth.triggerAttack('C3')
+    $('#eye').change(function (e) {
+        if (e.target.checked) {
+            GazeCloudAPI.StartEyeTracking();
+            controls = 'eye'
+            calibrated = false
+            console.log(controls)
+        }
+    })
+
 
     $('#piano').change(function () {
         if ($(this).is(':checked')) {
@@ -166,7 +229,7 @@ $(document).ready(function () {
 
     let expElements = document.querySelectorAll('.radioRow.exp')
     let instElements = document.querySelectorAll('.radioRow.inst')
-    $('.switch input').change(function () {
+    $('.mode .switch input').change(function () {
         if ($(this).is(':checked')) {
             console.log('instrumental')
             expElements.forEach(el => $(el).hide())
@@ -182,13 +245,6 @@ $(document).ready(function () {
         }
     })
 
-
-
-    // sebezähne statt sinus -> filter
-
-
-    // filter.connect(vol)
-    // synth.connect(vol)
 
 
     let c
@@ -211,7 +267,7 @@ $(document).ready(function () {
         "019b99b6397884cc7dfb0d9b6fd2f281.jpeg",
     ]
 
-    if (img.complete) {
+    if (img.complete && img.naturalHeight !== 0) {
         setSizeAndImgData();
     }
 
@@ -231,18 +287,29 @@ $(document).ready(function () {
         // $(cursor).css('left', cursorPosX + 'px')
         // $(cursor).css('top', cursorPosY + 'px')
 
-        let imgData = cxt.getImageData(x, y, 1, 1)
+        if (controls === 'mouse') {
 
-        // HSL -> intuitiever
+            var gaze = document.getElementById("gaze");
+            x -= gaze .clientWidth/2;
+            y -= gaze .clientHeight/2;
+
+            gaze.style.display = 'block'
+
+            gaze.style.left = x + "px";
+            gaze.style.top = y + "px";
+
+            play(x, y)
+        }
+    })
+
+    function play(x, y) {
+        let imgData = cxt.getImageData(x, y, 1, 1)
 
         // filter auf S (sättigung des tons)
         // oder ein 2. osc -> filter mit starker resonanz / güte / q factor (in db) = sinus
 
         // filter auf weises rauschen -> wie pfeifen (mit band pass)
 
-        // yves klein
-
-        // let hsl = RGBToHSL(imgData.data[0], imgData.data[1], imgData.data[2])
         let hsv = rgb2hsv(imgData.data[0], imgData.data[1], imgData.data[2])
 
         $(h1).css('color', 'rgb(' + (255 - imgData.data[0]) + ', ' + (255 - imgData.data[1]) + ', ' + (255 - imgData.data[2]) + ')')
@@ -478,8 +545,7 @@ $(document).ready(function () {
             }
             panner.pan.rampTo(panTo, 0.1);
         }
-
-    })
+    }
 
     $('.switchImg').click((e) => {
         if (e.target.classList.contains('right')) {
@@ -502,6 +568,7 @@ $(document).ready(function () {
     $('.settings').click(() => {
         $('.settings').toggleClass('active')
         $('.set').toggleClass('active')
+        $('.switchImg').toggleClass('active')
     })
 
     $('.mute_button').click(() => {

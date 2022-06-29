@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://tonejs.github.io/build/Tone.js"></script>
     <script src="https://raw.githubusercontent.com/audiojs/decibels/master/from-gain.js"></script>
-    <script type="module" src="js/main.js"></script>
+    <script src="https://api.gazerecorder.com/GazeCloudAPI.js" ></script>
+    <script src="js/main.js"></script>
     <script src="js/tools.js"></script>
     <title>color2sound</title>
 </head>
@@ -36,6 +37,19 @@
                     <span class="slider round"></span>
                 </label>
                 <p>Instrumental</p>
+            </div>
+        </div>
+        <div class="row controls">
+            <p>Controls:</p>
+            <div class="radioSet">
+                <div class="radioRow">
+                    <input type="radio" id="mouse" name="controls" value="mouse" checked>
+                    <label for="mouse">Mouse</label>
+                </div>
+                <div class="radioRow">
+                    <input type="radio" id="eye" name="controls" value="eye">
+                    <label for="eye">Eye Tracking</label>
+                </div>
             </div>
         </div>
         <div class="row">
@@ -89,14 +103,14 @@
                 <div class="radioRow">
                     <input type="checkbox" id="pan">
                     <label for="pan">left / right<br>
-                        <i>- on / off</i>
+                        <i>on / off</i>
                     </label>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!--    <div class="cursor"></div>-->
+<div id ="gaze" style ='position: absolute;display:none;width: 100px;height: 100px;border-radius: 50%;border: solid 2px  rgba(255, 255,255, .2);	box-shadow: 0 0 100px 3px rgba(125, 125,125, .5);	pointer-events: none;	z-index: 1'></div>
 <img src="content/right.svg" alt="" class="right switchImg">
 <img src="content/right.svg" alt="" class="left switchImg">
 </body>
