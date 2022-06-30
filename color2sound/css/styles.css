@@ -13,7 +13,7 @@ body {
 }
 
 #c {
-    cursor: none;
+    cursor: crosshair;
 }
 
 
@@ -72,7 +72,7 @@ body {
 }
 
 .set.active {
-    max-height: 350px;
+    max-height: 480px;
     transition: max-height 0.3s;
 }
 
@@ -93,6 +93,10 @@ body {
 
 .row:nth-child(1) {
     align-items: center;
+    border-bottom: none;
+}
+
+.row:last-child {
     border-bottom: none;
 }
 

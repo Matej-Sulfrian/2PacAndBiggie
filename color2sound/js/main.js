@@ -7,7 +7,6 @@ $(document).ready(function () {
     const h2 = $('h2')
     const imgSrc = [
         "Hsl-hsv_models.svg.png",
-        "1_dhEdk3qMhkK1tQjXfwuQFw.png",
         "HSV_color_space_stereographic.png",
         "Concentric-Circles.jpeg",
         "kandinsky1.jpeg",
@@ -79,7 +78,12 @@ $(document).ready(function () {
     // Master Volume
     let master = new Tone.Volume(0);
     const panner = new Tone.Panner(0).toDestination();
-    master.connect(panner)
+    const masterLowpass = new Tone.Filter(10000, 'lowpass')
+    // const feedbackDelay = new Tone.FeedbackDelay("128n", 0.5)
+    master.connect(masterLowpass)
+    masterLowpass.connect(panner)
+    // feedbackDelay.connect(panner)
+
     let mute = false
     master.mute = true
 
@@ -87,7 +91,7 @@ $(document).ready(function () {
     // SHEPERD TONE
 
     let sheperd = false
-    const shepVol = new Tone.Volume(0)
+    const shepVol = new Tone.Volume(-12)
     shepVol.connect(master)
     shepVol.mute = true
 
@@ -106,9 +110,6 @@ $(document).ready(function () {
             shepVol.mute = true
         }
     })
-
-
-
 
 
     let expS = false
@@ -148,7 +149,9 @@ $(document).ready(function () {
         // console.log(note)
         pianoNotes[note].isPlaying = false
         pianoNotes[note].player = new Tone.Player('ion__piano-notes/ion__' + note + '.mp3')
-        pianoNotes[note].player.connect(volPiano)
+        pianoNotes[note].feedbackDelay = new Tone.FeedbackDelay('128n', 0.5)
+        pianoNotes[note].player.connect(pianoNotes[note].feedbackDelay)
+        pianoNotes[note].feedbackDelay.connect(volPiano)
         pianoNotes[note].player.onstop = () => {
             // console.log (note + 'piano stop')
             pianoNotes[note].isPlaying = false
@@ -160,7 +163,7 @@ $(document).ready(function () {
 
     // vol
     let guitarOpen = false
-    const volGuitarOpen = new Tone.Volume(-8)
+    const volGuitarOpen = new Tone.Volume(-12)
     volGuitarOpen.connect(master)
 
     // notes
@@ -242,6 +245,26 @@ $(document).ready(function () {
             pan = true
         } else {
             pan = false
+            panner.pan.rampTo(0, 0.1)
+        }
+    })
+
+    let lowPass = false
+    $('#lowPass').change(function () {
+        if ($(this).is(':checked')) {
+            lowPass = true
+        } else {
+            lowPass = false
+            masterLowpass.frequency.rampTo(10000, 0.1)
+        }
+    })
+
+    let delay = false
+    $('#delay').change(function () {
+        if ($(this).is(':checked')) {
+            delay = true
+        } else {
+            delay = false
         }
     })
 
@@ -289,13 +312,15 @@ $(document).ready(function () {
         if (controls === 'mouse') {
 
             var gaze = document.getElementById("gaze");
-            x -= gaze .clientWidth/2;
-            y -= gaze .clientHeight/2;
+            let gazeX = x
+            let gazeY = y
+            gazeX -= gaze .clientWidth/2;
+            gazeY -= gaze .clientHeight/2;
 
             gaze.style.display = 'block'
 
-            gaze.style.left = x + "px";
-            gaze.style.top = y + "px";
+            gaze.style.left = gazeX + "px";
+            gaze.style.top = gazeY + "px";
 
             play(x, y)
         }
@@ -304,22 +329,41 @@ $(document).ready(function () {
     function play(x, y) {
         let imgData = cxt.getImageData(x, y, 1, 1)
 
-        // filter auf S (sättigung des tons)
-        // oder ein 2. osc -> filter mit starker resonanz / güte / q factor (in db) = sinus
-
-        // filter auf weises rauschen -> wie pfeifen (mit band pass)
-
         let hsv = rgb2hsv(imgData.data[0], imgData.data[1], imgData.data[2])
+        let s = hsv.s.replace('%', '')
+        let v = hsv.v.replace('%', '')
 
         $(h1).css('color', 'rgb(' + (255 - imgData.data[0]) + ', ' + (255 - imgData.data[1]) + ', ' + (255 - imgData.data[2]) + ')')
         $(h1).css('background-color', 'rgb(' + imgData.data[0] + ', ' + imgData.data[1] + ', ' + imgData.data[2] + ')')
         $(h2).html(hsv.h + ', ' + hsv.s + ', ' + hsv.v)
 
 
-        // picture filter setting -> blur
+        // S - Influence ********************************************************************
+
+        if (lowPass) {
+            masterLowpass.frequency.rampTo(100 + (s*s), 0.2)
+        } else {
+            masterLowpass.frequency.rampTo(10000, 0.1)
+        }
 
 
-        // SHEPERD TONE
+        // V - Influence *******************************************************************
+        let delayTimes = ['4n', '8n', '16n', '64n', '128n',]
+        if (v < 0) {
+            v++
+        } else if (v > 10) {
+            v--
+        }
+        let time
+
+        if (delay) {
+            time = delayTimes[Math.floor(v / 20)]
+        } else {
+            time = '128n'
+        }
+
+
+        // SHEPERD TONE *********************************************************************
 
         if (sheperd) {
 
@@ -346,6 +390,8 @@ $(document).ready(function () {
         }
 
 
+        // H - Influence ****************************************************************
+
         // Piano -------------------------------------------------------------------
 
         if (piano) {
@@ -355,13 +401,23 @@ $(document).ready(function () {
             // let deltaMove = deltaX * deltaX + deltaY * deltaY
 
             if (hsv.h < 360) {
-                let noteName = Object.keys(pianoNotes)[Math.floor(hsv.h / 45)]
-                let pianoNote = pianoNotes[noteName]
+                let pianoName = Object.keys(pianoNotes)[Math.floor(hsv.h / 45)]
+                let pianoNote = pianoNotes[pianoName]
 
                 if (!pianoNote.isPlaying) {
+                    pianoNote.feedbackDelay.set({delayTime: time})
                     pianoNote.player.start()
                     pianoNote.isPlaying = true
                 }
+
+                // let guitarName = Object.keys(guitarOpenNotes)[Math.floor(hsv.h / 45)]
+                // let guitarNote = guitarOpenNotes[guitarName]
+                //
+                // if (!guitarNote.isPlaying) {
+                //     guitarNote.player.start()
+                //     guitarNote.isPlaying = true
+                //     // guitarOpenIsPlaying = true
+                // }
             }
 
 
@@ -494,9 +550,9 @@ $(document).ready(function () {
         // Guitar Open --------------------------------------------------------------
 
         if (guitarOpen) {
-            let s = hsv.s.replace('%', '')
+
             if (s < 100) {
-                let noteName = Object.keys(guitarOpenNotes)[Math.floor(s / 20)]
+                let noteName = Object.keys(guitarOpenNotes)[Math.floor(hsv.h / 45)]
                 let guitarNote = guitarOpenNotes[noteName]
 
                 if (!guitarNote.isPlaying && !guitarOpenIsPlaying) {
@@ -593,6 +649,13 @@ $(document).ready(function () {
         c.height = window.innerHeight
 
         // console.log(c.width)
+
+        if (img.complete && img.naturalHeight !==0) {
+            cxt.drawImage(img, getFrame().offsetX, getFrame().offsetY, getFrame().width, getFrame().height, 0, 0, c.width, c.height)
+
+            $('.right').css('top', window.innerHeight / 2 - 25 + 'px')
+            $('.left').css('top', window.innerHeight / 2 - 25 + 'px')
+        }
 
         img.onload = () => {
             cxt.drawImage(img, getFrame().offsetX, getFrame().offsetY, getFrame().width, getFrame().height, 0, 0, c.width, c.height)
